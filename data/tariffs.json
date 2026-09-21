@@ -1,0 +1,265 @@
+{
+  "version": "2026.09",
+  "asOf": "September 2026",
+  "disclaimer": "Indicative domestic (LT-1 / residential) tariffs compiled from published State Electricity Regulatory Commission tariff orders. Slabs, fuel surcharge and duty change through the year and vary by connection category. Always check your own bill and your DISCOM's current tariff order before making a financial decision.",
+  "units": {
+    "slabRate": "INR per kWh",
+    "fixedPerKw": "INR per kW of sanctioned load per month",
+    "fixedMin": "INR per month minimum fixed charge",
+    "fppcaPct": "fuel & power purchase cost adjustment, % of energy charge",
+    "dutyPct": "electricity duty / tax, % of (energy + fixed)",
+    "meterRent": "INR per month"
+  },
+  "slabMode": {
+    "telescopic": "each slab rate applies only to the units falling inside that slab",
+    "flat": "the slab your total consumption lands in sets one rate for every unit"
+  },
+  "states": [
+    {
+      "state": "Delhi",
+      "discoms": [
+        { "code": "BRPL", "name": "BSES Rajdhani Power Ltd", "mode": "telescopic",
+          "slabs": [{"upto":200,"rate":3.00},{"upto":400,"rate":4.50},{"upto":800,"rate":6.50},{"upto":1200,"rate":7.00},{"upto":null,"rate":8.00}],
+          "fixedPerKw":125,"fixedMin":0,"fppcaPct":35.0,"dutyPct":5,"meterRent":0,
+          "note":"Delhi govt subsidy: 100% up to 200 units, up to ₹800/month for 201–400 units, for eligible domestic consumers who have opted in." },
+        { "code": "BYPL", "name": "BSES Yamuna Power Ltd", "mode": "telescopic",
+          "slabs": [{"upto":200,"rate":3.00},{"upto":400,"rate":4.50},{"upto":800,"rate":6.50},{"upto":1200,"rate":7.00},{"upto":null,"rate":8.00}],
+          "fixedPerKw":125,"fixedMin":0,"fppcaPct":35.0,"dutyPct":5,"meterRent":0 },
+        { "code": "TPDDL", "name": "Tata Power Delhi Distribution Ltd", "mode": "telescopic",
+          "slabs": [{"upto":200,"rate":3.00},{"upto":400,"rate":4.50},{"upto":800,"rate":6.50},{"upto":1200,"rate":7.00},{"upto":null,"rate":8.00}],
+          "fixedPerKw":125,"fixedMin":0,"fppcaPct":22.0,"dutyPct":5,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Maharashtra",
+      "discoms": [
+        { "code": "MSEDCL", "name": "MSEDCL (Mahavitaran)", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":4.71},{"upto":300,"rate":10.29},{"upto":500,"rate":14.55},{"upto":null,"rate":16.64}],
+          "fixedPerKw":0,"fixedMin":128,"fppcaPct":0,"dutyPct":16,"meterRent":0,
+          "note":"Wheeling charge of roughly ₹1.28–1.58/unit is billed on top for most domestic consumers." },
+        { "code": "ADANI-MUM", "name": "Adani Electricity Mumbai", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":4.05},{"upto":300,"rate":7.60},{"upto":500,"rate":11.30},{"upto":null,"rate":12.90}],
+          "fixedPerKw":0,"fixedMin":105,"fppcaPct":0,"dutyPct":16,"meterRent":0 },
+        { "code": "TATA-MUM", "name": "Tata Power Mumbai", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":3.40},{"upto":300,"rate":5.55},{"upto":500,"rate":9.90},{"upto":null,"rate":11.10}],
+          "fixedPerKw":0,"fixedMin":95,"fppcaPct":0,"dutyPct":16,"meterRent":0 },
+        { "code": "BEST", "name": "BEST Undertaking, Mumbai", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":3.65},{"upto":300,"rate":6.30},{"upto":500,"rate":10.40},{"upto":null,"rate":11.90}],
+          "fixedPerKw":0,"fixedMin":100,"fppcaPct":0,"dutyPct":16,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Uttar Pradesh",
+      "discoms": [
+        { "code": "UPPCL-U", "name": "UPPCL — Urban (PVVNL / MVVNL / PuVVNL / DVVNL)", "mode": "telescopic",
+          "slabs": [{"upto":150,"rate":5.50},{"upto":300,"rate":6.00},{"upto":500,"rate":6.50},{"upto":null,"rate":7.00}],
+          "fixedPerKw":110,"fixedMin":0,"fppcaPct":0,"dutyPct":5,"meterRent":0 },
+        { "code": "UPPCL-R", "name": "UPPCL — Rural (metered)", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":3.35},{"upto":150,"rate":3.85},{"upto":300,"rate":5.00},{"upto":null,"rate":5.50}],
+          "fixedPerKw":90,"fixedMin":0,"fppcaPct":0,"dutyPct":5,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Karnataka",
+      "discoms": [
+        { "code": "BESCOM", "name": "BESCOM (Bengaluru)", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":4.85},{"upto":null,"rate":6.75}],
+          "fixedPerKw":120,"fixedMin":0,"fppcaPct":0,"dutyPct":9,"meterRent":0,
+          "note":"Gruha Jyoti scheme gives free power up to the household's baseline consumption (capped at 200 units) for eligible consumers." },
+        { "code": "MESCOM", "name": "MESCOM (Mangaluru)", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":4.75},{"upto":null,"rate":6.60}],
+          "fixedPerKw":115,"fixedMin":0,"fppcaPct":0,"dutyPct":9,"meterRent":0 },
+        { "code": "HESCOM", "name": "HESCOM (Hubballi)", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":4.75},{"upto":null,"rate":6.60}],
+          "fixedPerKw":115,"fixedMin":0,"fppcaPct":0,"dutyPct":9,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Tamil Nadu",
+      "discoms": [
+        { "code": "TANGEDCO", "name": "TANGEDCO (TNEB)", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":0.00},{"upto":200,"rate":2.35},{"upto":400,"rate":4.70},{"upto":500,"rate":6.30},{"upto":null,"rate":8.40}],
+          "fixedPerKw":0,"fixedMin":30,"fppcaPct":0,"dutyPct":0,"meterRent":0,
+          "note":"First 100 units in each two-month cycle are free for domestic consumers. Billing is bi-monthly — enter two months of units for an accurate figure." }
+      ]
+    },
+    {
+      "state": "Telangana",
+      "discoms": [
+        { "code": "TGSPDCL", "name": "TGSPDCL (Hyderabad & south Telangana)", "mode": "flat",
+          "slabs": [{"upto":50,"rate":1.95},{"upto":100,"rate":3.10},{"upto":200,"rate":4.80},{"upto":null,"rate":7.70}],
+          "fixedPerKw":0,"fixedMin":55,"fppcaPct":0,"dutyPct":0,"meterRent":25,
+          "note":"Gruha Jyothi: up to 200 units free for eligible households." },
+        { "code": "TGNPDCL", "name": "TGNPDCL (north Telangana)", "mode": "flat",
+          "slabs": [{"upto":50,"rate":1.95},{"upto":100,"rate":3.10},{"upto":200,"rate":4.80},{"upto":null,"rate":7.70}],
+          "fixedPerKw":0,"fixedMin":55,"fppcaPct":0,"dutyPct":0,"meterRent":25 }
+      ]
+    },
+    {
+      "state": "Andhra Pradesh",
+      "discoms": [
+        { "code": "APSPDCL", "name": "APSPDCL (south AP)", "mode": "telescopic",
+          "slabs": [{"upto":30,"rate":1.90},{"upto":75,"rate":3.00},{"upto":125,"rate":4.50},{"upto":225,"rate":6.00},{"upto":400,"rate":8.75},{"upto":null,"rate":9.75}],
+          "fixedPerKw":10,"fixedMin":0,"fppcaPct":0,"dutyPct":0,"meterRent":0 },
+        { "code": "APEPDCL", "name": "APEPDCL (east AP)", "mode": "telescopic",
+          "slabs": [{"upto":30,"rate":1.90},{"upto":75,"rate":3.00},{"upto":125,"rate":4.50},{"upto":225,"rate":6.00},{"upto":400,"rate":8.75},{"upto":null,"rate":9.75}],
+          "fixedPerKw":10,"fixedMin":0,"fppcaPct":0,"dutyPct":0,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Gujarat",
+      "discoms": [
+        { "code": "UGVCL", "name": "UGVCL / MGVCL / PGVCL / DGVCL (RGP)", "mode": "telescopic",
+          "slabs": [{"upto":50,"rate":3.20},{"upto":100,"rate":4.00},{"upto":250,"rate":5.00},{"upto":null,"rate":5.50}],
+          "fixedPerKw":15,"fixedMin":0,"fppcaPct":0,"dutyPct":15,"meterRent":20 },
+        { "code": "TORRENT-AHM", "name": "Torrent Power (Ahmedabad / Surat)", "mode": "telescopic",
+          "slabs": [{"upto":50,"rate":3.45},{"upto":100,"rate":4.15},{"upto":250,"rate":5.15},{"upto":null,"rate":5.75}],
+          "fixedPerKw":20,"fixedMin":0,"fppcaPct":0,"dutyPct":15,"meterRent":20 }
+      ]
+    },
+    {
+      "state": "Rajasthan",
+      "discoms": [
+        { "code": "JVVNL", "name": "JVVNL / AVVNL / JdVVNL", "mode": "telescopic",
+          "slabs": [{"upto":50,"rate":4.75},{"upto":150,"rate":6.50},{"upto":300,"rate":7.35},{"upto":null,"rate":7.95}],
+          "fixedPerKw":230,"fixedMin":0,"fppcaPct":0,"dutyPct":0,"meterRent":0,
+          "note":"Fixed charge is levied per month in slabs by consumption, not strictly per kW." }
+      ]
+    },
+    {
+      "state": "Madhya Pradesh",
+      "discoms": [
+        { "code": "MPCZ", "name": "MP Madhya/Paschim/Poorv Kshetra VVCL", "mode": "telescopic",
+          "slabs": [{"upto":50,"rate":4.27},{"upto":150,"rate":5.24},{"upto":300,"rate":6.69},{"upto":null,"rate":6.86}],
+          "fixedPerKw":115,"fixedMin":0,"fppcaPct":0,"dutyPct":9,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Haryana",
+      "discoms": [
+        { "code": "UHBVN", "name": "UHBVN / DHBVN", "mode": "telescopic",
+          "slabs": [{"upto":50,"rate":2.00},{"upto":100,"rate":2.50},{"upto":150,"rate":2.75},{"upto":250,"rate":5.25},{"upto":500,"rate":6.30},{"upto":null,"rate":7.10}],
+          "fixedPerKw":75,"fixedMin":0,"fppcaPct":0,"dutyPct":6,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Punjab",
+      "discoms": [
+        { "code": "PSPCL", "name": "PSPCL", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":4.19},{"upto":300,"rate":6.79},{"upto":null,"rate":7.79}],
+          "fixedPerKw":85,"fixedMin":0,"fppcaPct":0,"dutyPct":13,"meterRent":0,
+          "note":"300 free units per billing cycle for eligible domestic consumers." }
+      ]
+    },
+    {
+      "state": "West Bengal",
+      "discoms": [
+        { "code": "WBSEDCL", "name": "WBSEDCL", "mode": "telescopic",
+          "slabs": [{"upto":102,"rate":5.25},{"upto":180,"rate":6.05},{"upto":300,"rate":6.80},{"upto":600,"rate":7.60},{"upto":null,"rate":8.60}],
+          "fixedPerKw":15,"fixedMin":0,"fppcaPct":0,"dutyPct":0,"meterRent":30 },
+        { "code": "CESC", "name": "CESC Kolkata", "mode": "telescopic",
+          "slabs": [{"upto":25,"rate":5.03},{"upto":60,"rate":5.85},{"upto":100,"rate":6.57},{"upto":150,"rate":7.55},{"upto":300,"rate":8.55},{"upto":null,"rate":9.55}],
+          "fixedPerKw":20,"fixedMin":0,"fppcaPct":0,"dutyPct":0,"meterRent":30 }
+      ]
+    },
+    {
+      "state": "Bihar",
+      "discoms": [
+        { "code": "NBPDCL", "name": "NBPDCL / SBPDCL (urban)", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":4.12},{"upto":200,"rate":5.03},{"upto":null,"rate":6.10}],
+          "fixedPerKw":0,"fixedMin":80,"fppcaPct":0,"dutyPct":6,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Kerala",
+      "discoms": [
+        { "code": "KSEB", "name": "KSEB Ltd", "mode": "flat",
+          "slabs": [{"upto":50,"rate":3.35},{"upto":100,"rate":4.40},{"upto":150,"rate":5.60},{"upto":200,"rate":7.00},{"upto":250,"rate":8.10},{"upto":null,"rate":9.50}],
+          "fixedPerKw":0,"fixedMin":60,"fppcaPct":0,"dutyPct":10,"meterRent":0,
+          "note":"Below 250 units the flat rate for the whole consumption is used; above 250 units KSEB switches to a telescopic structure." }
+      ]
+    },
+    {
+      "state": "Odisha",
+      "discoms": [
+        { "code": "TPCODL", "name": "TP Central / North / South / Western Odisha", "mode": "telescopic",
+          "slabs": [{"upto":50,"rate":3.00},{"upto":200,"rate":4.80},{"upto":400,"rate":5.80},{"upto":null,"rate":6.20}],
+          "fixedPerKw":30,"fixedMin":0,"fppcaPct":0,"dutyPct":0,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Jharkhand",
+      "discoms": [
+        { "code": "JBVNL", "name": "JBVNL", "mode": "telescopic",
+          "slabs": [{"upto":200,"rate":6.65},{"upto":null,"rate":6.65}],
+          "fixedPerKw":100,"fixedMin":0,"fppcaPct":0,"dutyPct":6,"meterRent":0,
+          "note":"200 free units per month for eligible domestic consumers." }
+      ]
+    },
+    {
+      "state": "Chhattisgarh",
+      "discoms": [
+        { "code": "CSPDCL", "name": "CSPDCL", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":4.10},{"upto":200,"rate":4.50},{"upto":400,"rate":6.20},{"upto":null,"rate":7.50}],
+          "fixedPerKw":30,"fixedMin":0,"fppcaPct":0,"dutyPct":8,"meterRent":0,
+          "note":"Half-rate rebate applies on the first 400 units for eligible domestic consumers." }
+      ]
+    },
+    {
+      "state": "Assam",
+      "discoms": [
+        { "code": "APDCL", "name": "APDCL", "mode": "telescopic",
+          "slabs": [{"upto":120,"rate":5.90},{"upto":240,"rate":7.00},{"upto":null,"rate":7.70}],
+          "fixedPerKw":40,"fixedMin":0,"fppcaPct":0,"dutyPct":0,"meterRent":25 }
+      ]
+    },
+    {
+      "state": "Uttarakhand",
+      "discoms": [
+        { "code": "UPCL", "name": "UPCL", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":3.40},{"upto":200,"rate":5.20},{"upto":400,"rate":6.60},{"upto":null,"rate":7.25}],
+          "fixedPerKw":95,"fixedMin":0,"fppcaPct":0,"dutyPct":5,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Himachal Pradesh",
+      "discoms": [
+        { "code": "HPSEBL", "name": "HPSEBL", "mode": "telescopic",
+          "slabs": [{"upto":125,"rate":4.05},{"upto":300,"rate":5.05},{"upto":null,"rate":5.65}],
+          "fixedPerKw":60,"fixedMin":0,"fppcaPct":0,"dutyPct":0,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Goa",
+      "discoms": [
+        { "code": "GOAED", "name": "Goa Electricity Department", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":1.60},{"upto":200,"rate":2.30},{"upto":300,"rate":3.30},{"upto":400,"rate":4.30},{"upto":null,"rate":5.20}],
+          "fixedPerKw":30,"fixedMin":0,"fppcaPct":0,"dutyPct":0,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Jammu & Kashmir",
+      "discoms": [
+        { "code": "JPDCL", "name": "JPDCL / KPDCL", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":3.30},{"upto":200,"rate":4.10},{"upto":null,"rate":5.10}],
+          "fixedPerKw":70,"fixedMin":0,"fppcaPct":0,"dutyPct":0,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Puducherry",
+      "discoms": [
+        { "code": "PEDPY", "name": "Puducherry Electricity Department", "mode": "telescopic",
+          "slabs": [{"upto":100,"rate":1.95},{"upto":200,"rate":3.30},{"upto":300,"rate":5.20},{"upto":null,"rate":6.40}],
+          "fixedPerKw":25,"fixedMin":0,"fppcaPct":0,"dutyPct":0,"meterRent":0 }
+      ]
+    },
+    {
+      "state": "Chandigarh",
+      "discoms": [
+        { "code": "CHD", "name": "Chandigarh Electricity Department", "mode": "telescopic",
+          "slabs": [{"upto":150,"rate":2.75},{"upto":400,"rate":4.25},{"upto":null,"rate":4.65}],
+          "fixedPerKw":35,"fixedMin":0,"fppcaPct":0,"dutyPct":0,"meterRent":0 }
+      ]
+    }
+  ]
+}

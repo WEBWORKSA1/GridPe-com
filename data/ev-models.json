@@ -1,0 +1,69 @@
+{
+  "version": "2026.09",
+  "asOf": "September 2026",
+  "disclaimer": "Battery and range figures are manufacturer-stated; the km/kWh column is a real-world efficiency estimate drawn from published independent road tests and owner data, not the ARAI/MIDC certified figure. Prices are indicative ex-showroom starting prices and change frequently.",
+  "fuelPrices": [
+    { "city": "Delhi", "petrol": 102.12, "diesel": 89.45, "cng": 76.6 },
+    { "city": "Mumbai", "petrol": 111.21, "diesel": 97.6, "cng": 79.5 },
+    { "city": "Bengaluru", "petrol": 110.44, "diesel": 97.0, "cng": 89.5 },
+    { "city": "Chennai", "petrol": 107.76, "diesel": 95.4, "cng": 87.0 },
+    { "city": "Kolkata", "petrol": 113.51, "diesel": 100.3, "cng": 86.0 },
+    { "city": "Hyderabad", "petrol": 115.69, "diesel": 101.8, "cng": 95.5 },
+    { "city": "Pune", "petrol": 110.8, "diesel": 97.2, "cng": 87.0 },
+    { "city": "Ahmedabad", "petrol": 101.2, "diesel": 96.9, "cng": 78.0 },
+    { "city": "Jaipur", "petrol": 108.5, "diesel": 93.9, "cng": 85.0 },
+    { "city": "Lucknow", "petrol": 101.9, "diesel": 95.1, "cng": 91.0 },
+    { "city": "Chandigarh", "petrol": 96.2, "diesel": 84.3, "cng": 84.0 },
+    { "city": "Kochi", "petrol": 107.3, "diesel": 96.2, "cng": 85.0 }
+  ],
+  "chargingTariffs": {
+    "homeSingleSlab": 8.0,
+    "homeEvTariffRange": [5.5, 8.5],
+    "publicAC": [10, 18],
+    "publicDC": [18, 26],
+    "acEfficiency": 0.88,
+    "dcEfficiency": 0.94,
+    "dcTaperFactor": 0.75
+  },
+  "segments": ["Hatchback", "Sedan", "Compact SUV", "SUV", "MPV", "Micro"],
+  "models": [
+    { "brand": "Tata", "model": "Tiago EV (Long Range)", "segment": "Hatchback", "batteryKwh": 24.0, "usableKwh": 22.8, "claimedRangeKm": 293, "realKmPerKwh": 7.77, "maxAcKw": 7.2, "maxDcKw": 50, "priceLakh": 11.1 },
+    { "brand": "Tata", "model": "Tigor EV", "segment": "Sedan", "batteryKwh": 26.0, "usableKwh": 24.7, "claimedRangeKm": 315, "realKmPerKwh": 7.29, "maxAcKw": 7.2, "maxDcKw": 50, "priceLakh": 12.5 },
+    { "brand": "Tata", "model": "Punch EV (Long Range)", "segment": "Compact SUV", "batteryKwh": 35.0, "usableKwh": 33.2, "claimedRangeKm": 421, "realKmPerKwh": 6.95, "maxAcKw": 7.2, "maxDcKw": 50, "priceLakh": 14.0 },
+    { "brand": "Tata", "model": "Nexon EV 45", "segment": "Compact SUV", "batteryKwh": 45.0, "usableKwh": 42.8, "claimedRangeKm": 489, "realKmPerKwh": 7.79, "maxAcKw": 7.2, "maxDcKw": 60, "priceLakh": 16.5 },
+    { "brand": "Tata", "model": "Curvv EV 55", "segment": "SUV", "batteryKwh": 55.0, "usableKwh": 52.3, "claimedRangeKm": 502, "realKmPerKwh": 6.64, "maxAcKw": 7.2, "maxDcKw": 70, "priceLakh": 19.5 },
+    { "brand": "Tata", "model": "Harrier EV AWD", "segment": "SUV", "batteryKwh": 75.0, "usableKwh": 71.3, "claimedRangeKm": 622, "realKmPerKwh": 5.35, "maxAcKw": 11, "maxDcKw": 120, "priceLakh": 28.5 },
+    { "brand": "MG", "model": "Comet EV", "segment": "Micro", "batteryKwh": 17.3, "usableKwh": 16.4, "claimedRangeKm": 230, "realKmPerKwh": 11.17, "maxAcKw": 3.3, "maxDcKw": 0, "priceLakh": 7.5 },
+    { "brand": "MG", "model": "Windsor EV", "segment": "MPV", "batteryKwh": 38.0, "usableKwh": 36.1, "claimedRangeKm": 332, "realKmPerKwh": 8.10, "maxAcKw": 7.4, "maxDcKw": 45, "priceLakh": 14.0 },
+    { "brand": "MG", "model": "ZS EV", "segment": "SUV", "batteryKwh": 50.3, "usableKwh": 47.8, "claimedRangeKm": 461, "realKmPerKwh": 6.70, "maxAcKw": 7.4, "maxDcKw": 60, "priceLakh": 18.0 },
+    { "brand": "Citroen", "model": "eC3", "segment": "Hatchback", "batteryKwh": 29.2, "usableKwh": 27.7, "claimedRangeKm": 320, "realKmPerKwh": 7.80, "maxAcKw": 3.3, "maxDcKw": 30, "priceLakh": 12.8 },
+    { "brand": "Hyundai", "model": "Creta Electric (LR)", "segment": "SUV", "batteryKwh": 51.4, "usableKwh": 48.8, "claimedRangeKm": 473, "realKmPerKwh": 8.40, "maxAcKw": 11, "maxDcKw": 100, "priceLakh": 20.0 },
+    { "brand": "Kia", "model": "Carens Clavis EV (LR)", "segment": "MPV", "batteryKwh": 51.4, "usableKwh": 48.8, "claimedRangeKm": 490, "realKmPerKwh": 7.08, "maxAcKw": 11, "maxDcKw": 100, "priceLakh": 21.5 },
+    { "brand": "Mahindra", "model": "BE 6 (79 kWh)", "segment": "SUV", "batteryKwh": 79.0, "usableKwh": 75.1, "claimedRangeKm": 682, "realKmPerKwh": 5.68, "maxAcKw": 11, "maxDcKw": 175, "priceLakh": 26.9 },
+    { "brand": "Mahindra", "model": "XEV 9e (79 kWh)", "segment": "SUV", "batteryKwh": 79.0, "usableKwh": 75.1, "claimedRangeKm": 656, "realKmPerKwh": 5.78, "maxAcKw": 11, "maxDcKw": 175, "priceLakh": 30.5 },
+    { "brand": "Mahindra", "model": "XUV400 EV Pro", "segment": "Compact SUV", "batteryKwh": 39.4, "usableKwh": 37.4, "claimedRangeKm": 456, "realKmPerKwh": 6.60, "maxAcKw": 7.2, "maxDcKw": 50, "priceLakh": 16.7 },
+    { "brand": "BYD", "model": "Atto 3", "segment": "SUV", "batteryKwh": 60.5, "usableKwh": 57.5, "claimedRangeKm": 521, "realKmPerKwh": 6.20, "maxAcKw": 7, "maxDcKw": 80, "priceLakh": 25.0 },
+    { "brand": "Hyundai", "model": "Ioniq 5", "segment": "SUV", "batteryKwh": 72.6, "usableKwh": 69.0, "claimedRangeKm": 631, "realKmPerKwh": 6.10, "maxAcKw": 11, "maxDcKw": 350, "priceLakh": 46.0 },
+    { "brand": "Tata", "model": "Tiago EV (Medium Range)", "segment": "Hatchback", "batteryKwh": 19.2, "usableKwh": 18.2, "claimedRangeKm": 250, "realKmPerKwh": 8.10, "maxAcKw": 3.3, "maxDcKw": 50, "priceLakh": 8.7 },
+    { "brand": "Tata", "model": "Nexon EV 30", "segment": "Compact SUV", "batteryKwh": 30.0, "usableKwh": 28.5, "claimedRangeKm": 325, "realKmPerKwh": 8.05, "maxAcKw": 3.3, "maxDcKw": 50, "priceLakh": 12.5 },
+    { "brand": "Vinfast", "model": "VF6", "segment": "Compact SUV", "batteryKwh": 59.6, "usableKwh": 56.6, "claimedRangeKm": 468, "realKmPerKwh": 6.00, "maxAcKw": 11, "maxDcKw": 60, "priceLakh": 17.0 }
+  ],
+  "chargers": [
+    { "id": "3.3", "name": "3.3 kW portable (15A socket)", "kw": 3.3, "type": "AC", "installCost": 0, "note": "Bundled with most cars. Plugs into a heavy-duty 15A socket." },
+    { "id": "7.2", "name": "7.2 kW AC wallbox", "kw": 7.2, "type": "AC", "installCost": 28000, "note": "Needs a single-phase 32A line and usually a sanctioned-load upgrade." },
+    { "id": "11", "name": "11 kW three-phase wallbox", "kw": 11, "type": "AC", "installCost": 45000, "note": "Requires a three-phase connection." },
+    { "id": "25", "name": "25 kW DC (public)", "kw": 25, "type": "DC", "installCost": 0 },
+    { "id": "50", "name": "50 kW DC fast (public)", "kw": 50, "type": "DC", "installCost": 0 },
+    { "id": "60", "name": "60 kW DC fast (public)", "kw": 60, "type": "DC", "installCost": 0 },
+    { "id": "120", "name": "120 kW DC ultra-fast (public)", "kw": 120, "type": "DC", "installCost": 0 },
+    { "id": "180", "name": "180 kW+ DC ultra-fast (public)", "kw": 180, "type": "DC", "installCost": 0 }
+  ],
+  "networks": [
+    { "name": "Tata Power EZ Charge", "acRate": 14, "dcRate": 21, "coverage": "500+ cities" },
+    { "name": "Statiq", "acRate": 15, "dcRate": 22, "coverage": "60+ cities" },
+    { "name": "ChargeZone", "acRate": 14, "dcRate": 20, "coverage": "National highways" },
+    { "name": "Jio-bp Pulse", "acRate": 13, "dcRate": 20, "coverage": "Metro clusters" },
+    { "name": "Zeon Charging", "acRate": 15, "dcRate": 22, "coverage": "West & south India" },
+    { "name": "Glida (Fortum)", "acRate": 14, "dcRate": 21, "coverage": "Metros" }
+  ]
+}
