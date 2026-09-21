@@ -2,7 +2,9 @@
 
 **Grid Pe — India's independent electricity, rooftop solar & EV money engine.**
 
-Free calculators built on published tariff orders, the PM Surya Ghar subsidy structure and independently tested EV efficiency. Static site, zero backend, hosted on GitHub Pages.
+Free calculators built on published tariff orders, the PM Surya Ghar subsidy structure and independently tested EV efficiency. Static site, zero backend, hosted on GitHub Pages (built by Pages' native Jekyll from the `gh-pages` branch).
+
+**Live:** https://webworksa1.github.io/GridPe-com/
 
 > **This domain and website may be available.** Enquiries: [web.works/contact](https://web.works/contact)
 
@@ -20,7 +22,9 @@ Free calculators built on published tariff orders, the PM Surya Ghar subsidy str
 ## Structure
 
 ```
-index.html + 26 root pages      calculators, data, conversion, legal
+_layouts/default.html           shared shell: head, SEO meta, JSON-LD, top domain bar, scripts
+_includes/                      nav, footer, ad slots
+index.html + 26 root pages      page bodies with JSON front matter (calculators, data, legal…)
 guides/                         6 long-form articles
 assets/css/style.css            design system (light + dark)
 assets/js/site.js               CONFIG, forms, nav, theme, obfuscated contact
@@ -38,7 +42,7 @@ Contact submissions never expose the inbox: the address is stored encoded and on
 
 ## Custom domain
 
-1. Add a file named `CNAME` containing `gridpe.com`
+1. Add a file named `CNAME` containing `gridpe.com` to the `gh-pages` branch
 2. DNS: `A` records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; `www` `CNAME` → `webworksa1.github.io`
 3. Repo Settings → Pages → Enforce HTTPS
 
