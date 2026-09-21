@@ -1,0 +1,11 @@
+# GridPe.com — GitHub Pages (Jekyll) configuration
+title: GridPe
+url: "https://gridpe.com"
+exclude:
+  - README.md
+  - PROMPTS.md
+defaults:
+  - scope:
+      path: "guides"
+    values:
+      p: "../"
