@@ -1,0 +1,367 @@
+---
+{"layout": "default", "slug": "index.html", "title": "GridPe — India's Electricity, Solar & EV Money Calculators", "desc": "Free, independent calculators for Indian households: slab-wise electricity bill for 35+ DISCOMs, rooftop solar savings with PM Surya Ghar subsidy, EV vs petrol cost per km, and charging cost. No installer owns us.", "schema": [{"@type": "Organization", "@id": "https://gridpe.com/#org", "name": "GridPe", "url": "https://gridpe.com", "description": "India's independent electricity, rooftop solar and EV cost calculators."}, {"@type": "WebSite", "@id": "https://gridpe.com/#site", "url": "https://gridpe.com", "name": "GridPe", "publisher": {"@id": "https://gridpe.com/#org"}, "inLanguage": "en-IN"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does a 3 kW rooftop solar system cost in India after subsidy?", "acceptedAnswer": {"@type": "Answer", "text": "A 3 kW grid-tied system typically costs ₹1.50–1.80 lakh installed. The PM Surya Ghar subsidy pays ₹78,000 of that — ₹30,000/kW for the first 2 kW plus ₹18,000 for the third — leaving roughly ₹72,000–1.02 lakh net, before any state top-up."}}, {"@type": "Question", "name": "Is an EV actually cheaper to run than a petrol car in India?", "acceptedAnswer": {"@type": "Answer", "text": "Charged at home on an ₹8/unit tariff, a typical Indian EV runs at ₹1.10–1.50 per kilometre against ₹6.50–8.00 for a comparable petrol car. Public DC fast charging at ₹20–24/unit roughly doubles the EV figure to ₹2.70–3.20 per km, which is still well under petrol."}}, {"@type": "Question", "name": "Why is my electricity bill higher than my neighbour's on the same usage?", "acceptedAnswer": {"@type": "Answer", "text": "Most Indian tariffs are telescopic and steeply stepped, so crossing a slab raises the rate only on the units above it — but fixed charges scale with your sanctioned load, and fuel surcharge and electricity duty are levied as percentages. A higher sanctioned load or a different DISCOM can produce a materially different bill on identical consumption."}}]}]}
+---
+<section class="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="badge"><span class="dot pulse"></span> Updated for FY 2026&ndash;27 tariff orders</span>
+        <h1 class="mt2">Know exactly what your power<br><span class="gradient-text">actually costs you.</span></h1>
+        <p class="hero-sub">GridPe turns India's electricity tariffs, the PM Surya Ghar subsidy and real-world EV efficiency into eight calculators that give you a rupee figure in under sixty seconds. Free, no login, no installer paying for a good review.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="{{ page.p }}solar-calculator.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M13 2L4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5z"/></svg>
+            Calculate my solar savings
+          </a>
+          <a class="btn btn-ghost btn-lg" href="{{ page.p }}bill-calculator.html">Check my electricity bill</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>35+</b><span>DISCOM tariffs modelled</span></div>
+          <div class="hero-stat"><b>&#8377;78,000</b><span>Max central solar subsidy</span></div>
+          <div class="hero-stat"><b>20</b><span>EV models, real efficiency</span></div>
+          <div class="hero-stat"><b>&#8377;0</b><span>Cost to use, forever</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="card card-pad-lg reveal" style="border-color:var(--brand)">
+          <span class="badge amber">60-second estimate</span>
+          <h3 class="mt2">What could rooftop solar do for your bill?</h3>
+          <p class="muted" style="font-size:.93rem">Two inputs. No phone number until you have seen the number.</p>
+          <form action="{{ page.p }}solar-calculator.html" method="get">
+            <div class="field">
+              <label for="h-bill">Your average monthly electricity bill</label>
+              <div class="input-group">
+                <span class="prefix">&#8377;</span>
+                <input class="input" type="number" id="h-bill" name="bill" value="3500" min="300" max="200000" step="100" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="h-state">State</label>
+              <select class="select" id="h-state" name="state">
+                <option>Delhi</option><option>Maharashtra</option><option>Uttar Pradesh</option>
+                <option>Karnataka</option><option>Tamil Nadu</option><option>Gujarat</option>
+                <option>Rajasthan</option><option>Telangana</option><option>Haryana</option>
+                <option>Madhya Pradesh</option><option>West Bengal</option><option>Punjab</option>
+                <option>Kerala</option><option>Bihar</option><option>Andhra Pradesh</option>
+              </select>
+            </div>
+            <button class="btn btn-primary btn-block btn-lg" type="submit">Show me the numbers &rarr;</button>
+          </form>
+          <div class="trust-row">
+            <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> No signup</span>
+            <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> No spam calls</span>
+            <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Published tariff data</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">{% include ad-leader.html %}</div>
+
+<!-- ======================= TOOLS ======================= -->
+<section class="section" id="tools">
+  <div class="wrap">
+    <div class="center" style="max-width:62ch;margin-inline:auto">
+      <span class="badge">The toolkit</span>
+      <h2 class="mt2">Eight calculators that answer a rupee question</h2>
+      <p class="muted">Every formula runs in your browser against published tariff orders and independently tested vehicle efficiency. Nothing is sent anywhere, and we show our working on each page.</p>
+    </div>
+
+    <div class="grid g-auto mt3">
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}bill-calculator.html">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 3h16v18l-3-2-3 2-3-2-3 2-2-1.5V3z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <h3>Electricity Bill Calculator</h3>
+        <p class="muted">Slab-by-slab breakdown for 35+ DISCOMs, including fixed charge, fuel surcharge, electricity duty and your true effective rate per unit.</p>
+        <span class="badge plain">Most used</span>
+      </a>
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}solar-calculator.html">
+        <div class="card-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg></div>
+        <h3>Solar Savings Calculator</h3>
+        <p class="muted">System size, subsidy, net cost, payback period, IRR and a full 25-year cash-flow model with degradation and tariff escalation built in.</p>
+        <span class="badge">Highest value</span>
+      </a>
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}subsidy-calculator.html">
+        <div class="card-icon violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l2.6 6.3 6.9.5-5.2 4.4 1.6 6.6L12 16.5 6.1 19.8l1.6-6.6L2.5 8.8l6.9-.5L12 2z"/></svg></div>
+        <h3>PM Surya Ghar Subsidy</h3>
+        <p class="muted">The exact rupee figure the government pays for your system size, band by band, plus state top-ups and the eligibility conditions people get wrong.</p>
+      </a>
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}ev-calculator.html">
+        <div class="card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 17h14M4 17v-4l2-5h12l2 5v4"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg></div>
+        <h3>EV vs Petrol Calculator</h3>
+        <p class="muted">Real cost per kilometre using tested efficiency rather than ARAI range, with a home/public charging mix and a payback on the price premium.</p>
+      </a>
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}charging-calculator.html">
+        <div class="card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L5 13h6l-1 9 8-11h-6l1-9z"/></svg></div>
+        <h3>EV Charging Cost &amp; Time</h3>
+        <p class="muted">How long any Indian EV takes on a 3.3 kW plug, a 7.2 kW wallbox or a 50 kW DC gun, what each session costs, and where the bottleneck actually sits.</p>
+      </a>
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}appliance-calculator.html">
+        <div class="card-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M8 9h8M8 13h8M8 17h4"/></svg></div>
+        <h3>Appliance Load Calculator</h3>
+        <p class="muted">Build your home's load profile from 50 common appliances and find out which five devices are responsible for most of your bill.</p>
+      </a>
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}emi-calculator.html">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6 15h4"/></svg></div>
+        <h3>Solar EMI Calculator</h3>
+        <p class="muted">The only question that matters on a solar loan: does the monthly saving beat the monthly instalment? Full amortisation schedule included.</p>
+      </a>
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}roof-calculator.html">
+        <div class="card-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 11l9-7 9 7"/><path d="M5.5 9.8V20h13V9.8"/></svg></div>
+        <h3>Roof Area to kW</h3>
+        <p class="muted">Measure your terrace, subtract shading and walkways, and see the largest system that genuinely fits — before a salesperson tells you otherwise.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= LEAD BAND ======================= -->
+<section class="section-sm">
+  <div class="wrap">
+    <div class="lead-band reveal">
+      <div class="lead-form-inner">
+        <div class="split" style="gap:34px">
+          <div>
+            <span class="badge amber">Free &middot; no obligation</span>
+            <h2 class="mt2">Get three real rooftop solar quotes &mdash; and a straight answer on whether to bother.</h2>
+            <p>We pass your requirement to vetted installers empanelled on the national portal in your state, and we tell you what a fair price per kilowatt looks like before you talk to any of them. If solar does not make sense for your roof, we will say that too.</p>
+            <ul style="list-style:none;padding:0;font-size:.95rem">
+              <li style="display:flex;gap:10px;margin-bottom:9px"><span style="color:var(--brand);font-weight:900">&#10003;</span> We never sell your number to a call-centre list</li>
+              <li style="display:flex;gap:10px;margin-bottom:9px"><span style="color:var(--brand);font-weight:900">&#10003;</span> Subsidy paperwork guidance included, free</li>
+              <li style="display:flex;gap:10px;margin-bottom:9px"><span style="color:var(--brand);font-weight:900">&#10003;</span> Benchmarked against current &#8377;/W market rates</li>
+              <li style="display:flex;gap:10px"><span style="color:var(--brand);font-weight:900">&#10003;</span> One follow-up. Say no and we stop.</li>
+            </ul>
+          </div>
+          <div>
+            <form class="js-form" data-kind="Solar Quote Request" data-steps
+                  data-success-title="Request received"
+                  data-success-msg="We will match your requirement against empanelled installers in your state and come back within one working day with a benchmark price and up to three quotes.">
+              <div class="steps"><i class="step-pip"></i><i class="step-pip"></i><i class="step-pip"></i></div>
+
+              <div class="step-panel active">
+                <div class="field">
+                  <label for="l-pin">PIN code <span class="lbl-hint">so we match installers who actually serve you</span></label>
+                  <input class="input" id="l-pin" name="pin_code" data-type="pin" inputmode="numeric" maxlength="6" placeholder="110001" required>
+                </div>
+                <div class="field">
+                  <label>Average monthly electricity bill</label>
+                  <div class="radio-cards">
+                    <label class="radio-card"><input type="radio" name="monthly_bill" value="Under ₹1,500" required><span>Under &#8377;1,500<small>Small home</small></span></label>
+                    <label class="radio-card"><input type="radio" name="monthly_bill" value="₹1,500–3,000"><span>&#8377;1.5k&ndash;3k<small>2&ndash;3 BHK</small></span></label>
+                    <label class="radio-card"><input type="radio" name="monthly_bill" value="₹3,000–6,000"><span>&#8377;3k&ndash;6k<small>Large home</small></span></label>
+                    <label class="radio-card"><input type="radio" name="monthly_bill" value="₹6,000–15,000"><span>&#8377;6k&ndash;15k<small>Villa / shop</small></span></label>
+                    <label class="radio-card"><input type="radio" name="monthly_bill" value="Above ₹15,000"><span>Above &#8377;15k<small>Commercial</small></span></label>
+                  </div>
+                </div>
+                <div class="step-nav"><button type="button" class="btn btn-primary btn-block" data-step-next>Continue &rarr;</button></div>
+              </div>
+
+              <div class="step-panel">
+                <div class="field">
+                  <label>Property type</label>
+                  <div class="radio-cards">
+                    <label class="radio-card"><input type="radio" name="property_type" value="Independent house / villa" required><span>House / villa<small>Own terrace</small></span></label>
+                    <label class="radio-card"><input type="radio" name="property_type" value="Apartment or society"><span>Apartment<small>Society roof</small></span></label>
+                    <label class="radio-card"><input type="radio" name="property_type" value="Shop / office / factory"><span>Commercial<small>Shop or unit</small></span></label>
+                    <label class="radio-card"><input type="radio" name="property_type" value="Farmhouse / plot"><span>Farmhouse<small>Or open plot</small></span></label>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="l-roof">Rough roof area available <span class="lbl-hint">optional</span></label>
+                  <div class="input-group"><input class="input" id="l-roof" name="roof_sqft" type="number" placeholder="600" min="0"><span class="prefix" style="border:1px solid rgba(255,255,255,.18);border-left:0;border-radius:0 14px 14px 0">sq ft</span></div>
+                </div>
+                <div class="field">
+                  <label for="l-when">When are you looking to install?</label>
+                  <select class="select" id="l-when" name="timeline" required>
+                    <option value="">Select…</option>
+                    <option>Immediately — within a month</option>
+                    <option>In the next 1–3 months</option>
+                    <option>In 3–6 months</option>
+                    <option>Just researching for now</option>
+                  </select>
+                </div>
+                <div class="step-nav">
+                  <button type="button" class="btn btn-ghost" data-step-prev>&larr; Back</button>
+                  <button type="button" class="btn btn-primary" style="flex:1" data-step-next>Continue &rarr;</button>
+                </div>
+              </div>
+
+              <div class="step-panel">
+                <div class="field">
+                  <label for="l-name">Your name</label>
+                  <input class="input" id="l-name" name="name" placeholder="Full name" required>
+                </div>
+                <div class="field">
+                  <label for="l-phone">WhatsApp number <span class="lbl-hint">quotes are shared here</span></label>
+                  <div class="input-group"><span class="prefix">+91</span><input class="input" id="l-phone" name="phone" data-type="phone" inputmode="numeric" maxlength="10" placeholder="9876543210" required></div>
+                </div>
+                <div class="field">
+                  <label for="l-email">Email <span class="lbl-hint">for the written benchmark</span></label>
+                  <input class="input" id="l-email" name="email" type="email" placeholder="you@example.com" required>
+                </div>
+                <div class="field">
+                  <label class="check"><input type="checkbox" name="consent" value="yes" required>
+                    <span>I agree to be contacted about this enquiry and accept the <a href="{{ page.p }}privacy.html" style="color:var(--brand)">privacy policy</a>. I can opt out at any time.</span></label>
+                </div>
+                <div class="step-nav">
+                  <button type="button" class="btn btn-ghost" data-step-prev>&larr; Back</button>
+                  <button type="submit" class="btn btn-accent" style="flex:1">Get my free quotes</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= WHY ======================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="badge">Why trust the numbers</span>
+        <h2 class="mt2">Most solar "calculators" are lead forms wearing a lab coat.</h2>
+        <p class="muted">They ask for your phone number before showing a figure, quietly assume a 20-year straight-line saving with no panel degradation, ignore that your tariff escalates, and never mention that exported units settle below the retail rate in most states.</p>
+        <p class="muted">GridPe does the opposite. The result appears before we ask you anything. The 25-year model applies 0.6% annual degradation, 4% tariff escalation, ₹500/kW yearly maintenance and an inverter replacement in year 12 — then reports payback, NPV at an 8% discount rate and IRR. You can read every formula in our <a href="{{ page.p }}assets/js/calc.js">open calculation engine</a>.</p>
+        <a class="btn btn-ghost mt2" href="{{ page.p }}editorial-policy.html">Read our editorial policy &rarr;</a>
+      </div>
+      <div class="grid g2">
+        <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.4 8.2-8 9.6C7.4 20.2 4 17 4 12V7l8-4z"/><path d="M9 12l2 2 4-4" stroke-linecap="round"/></svg></div><h4>Result before contact</h4><p class="muted" style="font-size:.9rem">Every calculator gives you the full answer with no form in the way.</p></div>
+        <div class="card reveal"><div class="card-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16M8 15l3.5-4L15 14l4.5-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Honest downside</h4><p class="muted" style="font-size:.9rem">Degradation, O&amp;M and inverter replacement are all in the model.</p></div>
+        <div class="card reveal"><div class="card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg></div><h4>Sourced data</h4><p class="muted" style="font-size:.9rem">Tariffs from SERC orders; EV efficiency from independent road tests.</p></div>
+        <div class="card reveal"><div class="card-icon violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg></div><h4>Dated and versioned</h4><p class="muted" style="font-size:.9rem">Each dataset carries an "as of" stamp so you know how fresh it is.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">{% include ad-leader.html %}</div>
+
+<!-- ======================= GUIDES ======================= -->
+<section class="section" style="background:var(--bg-2);border-block:1px solid var(--border)">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap">
+      <div>
+        <span class="badge">Guides</span>
+        <h2 class="mt2 mb0">The explainers people actually search for</h2>
+      </div>
+      <a class="btn btn-ghost" href="{{ page.p }}guides.html">All guides &rarr;</a>
+    </div>
+    <div class="grid g3 mt3">
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}guides/pm-surya-ghar-subsidy-guide.html">
+        <span class="badge amber">Subsidy</span>
+        <h3 class="mt2">PM Surya Ghar subsidy: the complete 2026 guide</h3>
+        <p class="muted">What the scheme pays, who qualifies, the nine-step application, the documents that hold people up, and how long the money actually takes.</p>
+      </a>
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}guides/rooftop-solar-cost-india.html">
+        <span class="badge">Solar</span>
+        <h3 class="mt2">What rooftop solar really costs in India, kW by kW</h3>
+        <p class="muted">Honest installed price bands from 1 kW to 10 kW, what drives the difference, and the four line items where quotes get padded.</p>
+      </a>
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}guides/ev-vs-petrol-cost-india.html">
+        <span class="badge blue">EV</span>
+        <h3 class="mt2">EV vs petrol in India: the real per-kilometre maths</h3>
+        <p class="muted">Tested efficiency for 20 models, home versus public charging, the break-even mileage, and when an EV genuinely does not pay.</p>
+      </a>
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}guides/why-electricity-bill-high.html">
+        <span class="badge red">Bills</span>
+        <h3 class="mt2">Twelve reasons your electricity bill is higher than it should be</h3>
+        <p class="muted">From sanctioned-load creep and a mis-read meter to the geyser nobody switches off — diagnosed in the order worth checking.</p>
+      </a>
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}guides/net-metering-india.html">
+        <span class="badge">Policy</span>
+        <h3 class="mt2">Net metering in India, explained without the jargon</h3>
+        <p class="muted">Net metering versus net billing versus gross metering, why the difference can halve your returns, and what to confirm before you sign.</p>
+      </a>
+      <a class="card card-hover tile-link reveal" href="{{ page.p }}guides/home-ev-charger-installation.html">
+        <span class="badge blue">EV</span>
+        <h3 class="mt2">Installing a home EV charger: cost, wiring and load</h3>
+        <p class="muted">3.3 kW versus 7.2 kW, when you need a load upgrade, what the electrician should quote, and whether an EV tariff is worth applying for.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= VIDEO ======================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="badge red">Watch</span>
+        <h2 class="mt2">Every calculator, walked through on video</h2>
+        <p class="muted">Short, no-fluff walkthroughs of the subsidy application, the quote-comparison checklist and the numbers people get wrong. New explainer each week on the GridPe channel.</p>
+        <a class="btn btn-ghost mt2" href="{{ page.p }}videos.html">Browse the video library &rarr;</a>
+      </div>
+      <div>
+        <div class="video-embed reveal">
+          <div class="video-facade" data-yt="" data-title="GridPe video walkthrough"
+               style="background:linear-gradient(140deg,#0B2A3D,#04302A)"></div>
+        </div>
+        <p class="dim center mt1" style="font-size:.82rem">Video library launching alongside the channel &mdash; slots are wired and ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SUPPORT ======================= -->
+<section class="section-sm">
+  <div class="wrap">
+    <div class="card card-pad-lg reveal" style="background:linear-gradient(140deg,var(--surface),var(--surface-2))">
+      <div class="split">
+        <div>
+          <span class="badge amber">Reader-funded</span>
+          <h2 class="mt2">Ads pay for the servers. Readers pay for the independence.</h2>
+          <p class="muted">GridPe takes no money from solar installers for placement, ranking or a favourable write-up. Keeping it that way costs money — tariff orders have to be read every April, EV efficiency re-tested, and the tools kept free for people comparing a ₹1.5 lakh decision.</p>
+          <div class="hero-cta">
+            <a class="btn btn-accent" href="{{ page.p }}support.html">Support GridPe</a>
+            <a class="btn btn-ghost" href="{{ page.p }}advertise.html">Advertise with us</a>
+          </div>
+        </div>
+        <div class="grid g2">
+          <div class="stat"><b>&#8377;49</b><span>Keeps one calculator running a day</span></div>
+          <div class="stat"><b>&#8377;499</b><span>Funds a state tariff update</span></div>
+          <div class="stat"><b>&#8377;2,499</b><span>Funds a full data refresh</span></div>
+          <div class="stat"><b>0%</b><span>Installer money in our rankings</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FAQ ======================= -->
+<section class="section">
+  <div class="wrap wrap-narrow">
+    <div class="center"><span class="badge">FAQ</span><h2 class="mt2">Questions we get constantly</h2></div>
+    <div class="mt3">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How much does a 3 kW rooftop solar system cost after subsidy?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>A 3 kW grid-tied system typically lands between ₹1.50 lakh and ₹1.80 lakh installed, with ALMM-listed modules, a standard elevated structure and a net meter. PM Surya Ghar pays ₹78,000 of that — ₹30,000 per kW on the first 2 kW plus ₹18,000 for the third kilowatt — so your net outlay is roughly ₹72,000 to ₹1.02 lakh before any state top-up. Delhi and Uttar Pradesh add their own subsidy on top. Run your own numbers in the <a href="{{ page.p }}subsidy-calculator.html">subsidy calculator</a>.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Is an EV actually cheaper to run than a petrol car in India?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>On home charging, decisively. A Nexon EV at a tested 7.79 km/kWh on an ₹8/unit domestic tariff runs at about ₹1.17 per kilometre once you account for 88% charging efficiency. A 15 km/l petrol hatchback in Delhi at ₹102/litre runs at ₹6.81. The gap narrows sharply on public DC fast charging at ₹20–24/unit, which works out to roughly ₹2.73 per kilometre — still well under petrol, but it changes the payback on the price premium if you cannot charge at home. That last point is the one buyers underestimate.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Why is my bill higher than my neighbour's on the same usage?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>Three things usually explain it. Your sanctioned load may be higher, and fixed charges are levied per kilowatt of sanctioned load regardless of what you consume. You may be on a different DISCOM or a different category with its own slab structure. And fuel surcharge and electricity duty are percentages — in Delhi the power purchase adjustment alone can add a third to the energy charge. The <a href="{{ page.p }}bill-calculator.html">bill calculator</a> itemises all of it.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Does GridPe sell my details to installers?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>Only if you fill in the quote form, and only to installers who serve your PIN code. We do not sell contact data to aggregators or call-centre lists, we do not resell the same enquiry to a dozen vendors, and one follow-up is the limit — say no and the file closes. Using any calculator on this site sends nothing anywhere; the maths runs entirely in your browser.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How current is the tariff data?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>Each dataset carries a version and an "as of" date, shown on the page that uses it. State commissions publish tariff orders around the start of the financial year in April, so that is when the bulk of the refresh happens; fuel surcharge components move more often and are the most likely thing to be slightly stale. Treat every figure as a well-grounded estimate, not a quotation — and always check against your own bill.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>

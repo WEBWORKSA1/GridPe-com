@@ -1,0 +1,98 @@
+---
+{"layout": "default", "slug": "emi-calculator.html", "calc": "emi", "title": "Solar Loan EMI Calculator India — Does the Saving Beat the Instalment? | GridPe", "desc": "Calculate the EMI on a rooftop solar loan, see the full amortisation schedule, and find out whether your monthly electricity saving covers the instalment from day one.", "schema": [{"@type": "WebApplication", "name": "Solar Loan EMI Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}}]}
+---
+<section class="section-sm">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ page.p }}index.html">Home</a> &rsaquo; Calculators &rsaquo; Solar EMI</div>
+    <h1>Solar Loan EMI Calculator</h1>
+    <p class="lede" style="max-width:72ch">There is only one question worth asking about a solar loan: does the electricity you stop buying cover the instalment? If it does, the system is free to own from the first month and you have simply swapped a bill you will pay forever for one that ends.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="calc" id="calc-emi">
+      <div class="calc-in">
+        <h3 style="margin-bottom:1em">The loan</h3>
+        <div class="field">
+          <label for="f-amount">System cost after subsidy</label>
+          <div class="input-group"><span class="prefix">&#8377;</span><input class="input" type="number" id="f-amount" value="120000" min="10000" step="5000"></div>
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0">Use the net figure from the <a href="{{ page.p }}solar-calculator.html">solar calculator</a> — banks lend against the invoice, but you only need to borrow what you are actually out of pocket.</p>
+        </div>
+        <div class="field">
+          <label for="f-down">Down payment</label>
+          <div class="input-group"><span class="prefix">&#8377;</span><input class="input" type="number" id="f-down" value="20000" min="0" step="5000"></div>
+        </div>
+        <div class="field">
+          <label for="f-rate">Interest rate &mdash; <span id="f-rate-v">8.5%</span> p.a.</label>
+          <input type="range" id="f-rate" min="5" max="18" step="0.25" value="8.5">
+          <div class="range-row"><span>5%</span><span>18%</span></div>
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0">Residential rooftop solar up to 10 kW is classified as priority-sector lending. Public banks typically quote 7&ndash;10.5%; an unsecured personal loan will be 12&ndash;18% and changes the answer materially.</p>
+        </div>
+        <div class="field">
+          <label for="f-years">Tenure &mdash; <span id="f-years-v">5 years</span></label>
+          <input type="range" id="f-years" min="1" max="10" step="1" value="5">
+          <div class="range-row"><span>1 yr</span><span>10 yrs</span></div>
+        </div>
+        <div class="field">
+          <label for="f-save">Expected monthly electricity saving</label>
+          <div class="input-group"><span class="prefix">&#8377;</span><input class="input" type="number" id="f-save" value="3000" min="0" step="100"></div>
+        </div>
+      </div>
+
+      <div class="calc-out">
+        <div class="result-hero">
+          <div class="rh-label">Monthly EMI</div>
+          <div class="rh-value" id="r-emi">&#8377;0</div>
+          <div class="rh-note">Saving minus EMI: <strong id="r-net">&#8377;0</strong></div>
+        </div>
+        <div class="meter"><i id="r-meter" style="width:0%"></i></div>
+        <p class="dim" style="font-size:.78rem;margin-top:-4px">Teal portion is principal; the rest is interest.</p>
+
+        <div class="kv"><span class="k">Principal borrowed</span><span class="v" id="r-principal">&#8377;0</span></div>
+        <div class="kv"><span class="k">Total interest paid</span><span class="v neg" id="r-interest">&#8377;0</span></div>
+        <div class="kv"><span class="k">Total outgo (incl. down payment)</span><span class="v" id="r-total">&#8377;0</span></div>
+        <div class="kv"><span class="k">Interest as % of principal</span><span class="v" id="r-ratio">0%</span></div>
+
+        <div class="callout tip" style="margin-top:18px"><p class="mb0" id="r-verdict"></p></div>
+
+        <h4 style="margin:22px 0 10px">Year-by-year amortisation</h4>
+        <div class="table-wrap">
+          <table><thead><tr><th>Year</th><th class="num">Principal</th><th class="num">Interest</th><th class="num">Balance</th></tr></thead><tbody id="r-schedule"></tbody></table>
+        </div>
+      </div>
+    </div>
+    {% include ad-leader.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap sidebar-layout">
+    <div class="prose">
+      <h2>The EMI formula</h2>
+      <blockquote><p class="mb0"><strong>EMI</strong> = P × r × (1+r)<sup>n</sup> ÷ ((1+r)<sup>n</sup> − 1)</p></blockquote>
+      <p>Where P is the principal, r is the monthly rate (annual rate ÷ 1200) and n is the number of months. Nothing exotic — but two things about solar loans specifically are worth understanding.</p>
+
+      <h3>The tenure trade-off is unusually clean here</h3>
+      <p>With most loans, stretching the tenure is straightforwardly bad: you pay more interest for a lower instalment. With solar it is more interesting, because the asset generates a fixed monthly saving. A three-year tenure often produces an EMI that exceeds the saving, which means you fund the gap from your pocket. A seven-year tenure usually produces an EMI comfortably below the saving — you pay more interest in total, but you are never out of pocket in any month, and the system is generating free electricity for eighteen years after the loan closes.</p>
+      <p>Which is right depends on whether you value total cost or monthly cash flow. If you have the cash, paying outright always wins on total cost — a ₹1.2 lakh system at 8.5% over five years costs roughly ₹27,500 in interest, which is real money against a 25-year saving. If the alternative to borrowing is not installing at all, borrow.</p>
+
+      <h3>Watch the processing fee and the collateral question</h3>
+      <p>A 1&ndash;2% processing fee on a small loan is a meaningful addition to the effective rate. And note that a solar loan may be offered either as a secured loan against the asset or folded into a top-up on a home loan. The home-loan route usually carries the lowest rate available to you, but it extends the debt over a much longer horizon than the equipment's life — you can end up paying for an inverter in year 18 that was replaced in year 12.</p>
+
+      <div class="callout warn">
+        <b>Do not borrow against a subsidy you have not received</b>
+        <p class="mb0">The PM Surya Ghar subsidy arrives after installation, inspection and net-meter commissioning — a process that runs on your DISCOM's timetable, not yours. Borrow against the full cost and plan to prepay when the subsidy lands, rather than assuming it will be in your account before the first instalment. Confirm your lender permits partial prepayment without penalty; on a floating-rate retail loan to an individual, it generally must.</p>
+      </div>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="{{ page.p }}solar-calculator.html">Solar savings calculator — the net figure to borrow</a></li>
+        <li><a href="{{ page.p }}subsidy-calculator.html">Subsidy calculator</a></li>
+        <li><a href="{{ page.p }}guides/rooftop-solar-cost-india.html">What rooftop solar really costs</a></li>
+      </ul>
+      <p class="dim" style="font-size:.85rem">GridPe is not a lender, broker or financial adviser and receives nothing from any bank. This is an arithmetic tool; the terms that apply to you come from your lender.</p>
+    </div>
+    <aside class="sticky-side">{% include ad-rect.html %}</aside>
+  </div>
+</section>

@@ -1,0 +1,122 @@
+---
+{"layout": "default", "slug": "subsidy-calculator.html", "calc": "subsidy", "title": "PM Surya Ghar Subsidy Calculator 2026 — Exact Amount for Your kW | GridPe", "desc": "Calculate your exact PM Surya Ghar Muft Bijli Yojana subsidy: ₹30,000/kW for the first 2 kW, ₹18,000 for the third, capped at ₹78,000, plus state top-ups and the eligibility conditions applicants get wrong.", "schema": [{"@type": "WebApplication", "name": "PM Surya Ghar Subsidy Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}}]}
+---
+<section class="section-sm">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ page.p }}index.html">Home</a> &rsaquo; Calculators &rsaquo; PM Surya Ghar Subsidy</div>
+    <h1>PM Surya Ghar Subsidy Calculator</h1>
+    <p class="lede" style="max-width:70ch">The scheme is simple once you see the bands: ₹30,000 per kW for the first two kilowatts, ₹18,000 for the third, nothing beyond that, capped at ₹78,000. Here is what that means in rupees for your system, plus any state top-up.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="calc" id="calc-subsidy">
+      <div class="calc-in">
+        <h3 style="margin-bottom:1em">Your system</h3>
+        <div class="field">
+          <label for="f-kw">System size &mdash; <span id="f-kw-v">3 kW</span></label>
+          <input type="range" id="f-kw" min="1" max="10" step="0.5" value="3">
+          <div class="range-row"><span>1 kW</span><span>10 kW</span></div>
+          <p class="dim" style="font-size:.8rem;margin:8px 0 0">Not sure what size you need? The <a href="{{ page.p }}solar-calculator.html">solar calculator</a> sizes it from your bill.</p>
+        </div>
+        <div class="field">
+          <label for="f-state">State</label>
+          <select class="select" id="f-state"><option value="Delhi">Delhi</option></select>
+        </div>
+        <div class="field">
+          <span class="lbl">Property status</span>
+          <div class="radio-cards">
+            <label class="radio-card"><input type="radio" name="ptype" value="own" checked><span>Own home<small>Connection in my name</small></span></label>
+            <label class="radio-card"><input type="radio" name="ptype" value="other"><span>Rented / society<small>Different name on bill</small></span></label>
+          </div>
+        </div>
+        <div class="callout warn">
+          <b>The mistake that costs people the subsidy</b>
+          <p class="mb0" style="font-size:.9rem">Installing before the vendor is confirmed as empanelled on the national portal, or using modules not on the ALMM list. Both make an otherwise perfect installation ineligible, and there is no appeal that fixes it afterwards.</p>
+        </div>
+      </div>
+
+      <div class="calc-out">
+        <div class="result-hero">
+          <div class="rh-label">Total subsidy you receive</div>
+          <div class="rh-value" id="r-total">&#8377;0</div>
+          <div class="rh-note" id="r-pct">0% of project cost</div>
+        </div>
+        <div class="meter"><i id="r-meter" style="width:0%"></i></div>
+
+        <div class="kv"><span class="k">Central subsidy (PM Surya Ghar)</span><span class="v pos" id="r-central">&#8377;0</span></div>
+        <div class="kv"><span class="k">State top-up</span><span class="v pos" id="r-state">&#8377;0</span></div>
+        <div class="kv"><span class="k">Typical installed cost</span><span class="v" id="r-cost">&#8377;0</span></div>
+        <div class="kv"><span class="k"><b>Net out of pocket</b></span><span class="v" id="r-net">&#8377;0</span></div>
+
+        <h4 style="margin:22px 0 10px">Band-by-band breakdown</h4>
+        <div class="table-wrap">
+          <table><thead><tr><th>Band</th><th class="num">Rate</th><th class="num">Amount</th></tr></thead><tbody id="r-bands"></tbody></table>
+        </div>
+
+        <p class="dim mt2" style="font-size:.85rem" id="r-topup-note"></p>
+        <div class="callout tip" id="r-eligible"></div>
+
+        <a class="btn btn-primary btn-block mt2" href="{{ page.p }}quote.html">Get quotes from empanelled installers &rarr;</a>
+      </div>
+    </div>
+    {% include ad-leader.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap sidebar-layout">
+    <div class="prose">
+      <h2>How the subsidy is structured</h2>
+      <p>PM Surya Ghar: Muft Bijli Yojana replaced the older per-kW rooftop programme with a flat, banded structure that is deliberately front-loaded towards small residential systems:</p>
+      <ul>
+        <li><strong>First 2 kW</strong> — ₹30,000 per kW (₹60,000 total)</li>
+        <li><strong>Third kW</strong> — ₹18,000</li>
+        <li><strong>Above 3 kW</strong> — nothing</li>
+        <li><strong>Hard cap</strong> — ₹78,000 per household, regardless of system size</li>
+      </ul>
+      <p>The practical consequence: a 3 kW system attracts ₹78,000 and a 10 kW system attracts the same ₹78,000. Subsidy per kilowatt collapses from ₹30,000 on the first to ₹7,800 averaged over ten. That is why 3 kW has become the default residential size in India — it is the exact point where the subsidy stops subsidising.</p>
+      <p>Whether you should still go bigger depends entirely on your consumption. If you routinely burn 600 units a month, a 3 kW system covers about two-thirds of it and the extra kilowatts still pay back on their own merits at ₹40,000–48,000/kW unsubsidised — just over a longer horizon. Size to your bill, not to the subsidy cliff.</p>
+
+      <h2>Housing societies and RWAs</h2>
+      <p>Group Housing Societies and Resident Welfare Associations get a separate line: ₹18,000 per kW for common facilities — lifts, water pumps, corridor lighting, EV charging — up to 500 kW, calculated at 3 kW per house. This is materially underused. A society with a large terrace and a heavy common-area load often has better project economics than any individual flat owner in it, because common-area consumption is steady, daytime, and billed at commercial rates.</p>
+
+      <h2>The nine conditions that decide eligibility</h2>
+      <ol>
+        <li>The applicant must be a residential electricity consumer.</li>
+        <li>The connection must be in the applicant's name — this is where rented properties fall down.</li>
+        <li>The system must be grid-connected with a net meter. Off-grid and pure battery-backup systems are not eligible.</li>
+        <li>The installing vendor must be registered on the National Portal <em>before</em> installation.</li>
+        <li>Modules and cells must be from the ALMM approved list, with DCR cells.</li>
+        <li>One subsidy per household connection.</li>
+        <li>Installation, DISCOM inspection and net-meter commissioning must all be completed and recorded on the portal.</li>
+        <li>Bank account details on the portal must match the applicant.</li>
+        <li>The claim must be filed through the portal — money is not released against a vendor's invoice alone.</li>
+      </ol>
+
+      <div class="callout">
+        <b>Timeline reality check</b>
+        <p class="mb0">The portal states the subsidy is credited within about 30 days of successful inspection and commissioning. In practice the long poles are DISCOM feasibility approval at the start and net-meter installation at the end — both of which sit with your distribution company, not with the scheme. Budget for the process rather than the headline number, and do not let a vendor tell you the delay is the central government's doing.</p>
+      </div>
+
+      <h2>Frequently asked</h2>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Do I pay the full amount upfront and get reimbursed?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>In the standard flow, yes — you pay the vendor and the subsidy is credited to your bank account afterwards. Some empanelled vendors offer to adjust the subsidy against the invoice and claim it themselves. That is convenient but it hands them your claim; if you go that route, confirm in writing what happens if the claim is rejected for a reason that is their fault.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Can I claim it for a second property?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>The subsidy is per household electricity connection, not per person. A genuinely separate residential connection at a different property, in your name, is generally treated as a separate household. Verify with your DISCOM before committing money.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Is there a subsidy for batteries?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><div><p>No. The central subsidy covers the grid-tied solar portion only. Adding a battery for outage backup is a valid choice in areas with frequent power cuts, but you are paying for it entirely yourself at roughly ₹35,000–60,000 per usable kWh, and it does not improve your financial return — it buys reliability, not savings.</p></div></div></div>
+    </div>
+    <aside class="sticky-side">
+      {% include ad-rect.html %}
+      <div class="card">
+        <h4>Official portal</h4>
+        <p class="muted" style="font-size:.9rem">Applications are only valid through the national portal. GridPe is not affiliated with the scheme and never collects your consumer number or bank details.</p>
+        <a class="btn btn-ghost btn-sm btn-block" href="https://pmsuryaghar.gov.in" target="_blank" rel="noopener nofollow">pmsuryaghar.gov.in</a>
+      </div>
+      <div class="card mt2" style="border-color:var(--brand)">
+        <h4>Need an empanelled installer?</h4>
+        <p class="muted" style="font-size:.9rem">We only pass enquiries to vendors registered on the portal in your state.</p>
+        <a class="btn btn-primary btn-sm btn-block" href="{{ page.p }}quote.html">Get free quotes</a>
+      </div>
+    </aside>
+  </div>
+</section>

@@ -1,0 +1,181 @@
+---
+{"layout": "default", "slug": "solar-calculator.html", "calc": "solar", "title": "Rooftop Solar Calculator India 2026 — Subsidy, Payback & 25-Year Savings | GridPe", "desc": "Free rooftop solar calculator for India. Get system size in kW, installed cost, PM Surya Ghar subsidy, net outlay, payback period, IRR and a full 25-year savings model with degradation and tariff escalation.", "schema": [{"@type": "WebApplication", "name": "GridPe Rooftop Solar Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "description": "Indian rooftop solar sizing, subsidy and 25-year return calculator."}]}
+---
+<section class="section-sm">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ page.p }}index.html">Home</a> &rsaquo; Calculators &rsaquo; Solar Savings</div>
+    <h1>Rooftop Solar Savings Calculator</h1>
+    <p class="lede" style="max-width:72ch">System size, honest installed cost, the exact PM Surya Ghar subsidy, net outlay, payback, IRR and a 25-year cash-flow model that includes panel degradation, tariff escalation, maintenance and an inverter replacement in year 12. No phone number required to see any of it.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="calc" id="calc-solar">
+      <div class="calc-in">
+        <h3 style="margin-bottom:1em">Your situation</h3>
+
+        <div class="field">
+          <label for="f-state">State <span class="lbl-hint">sets the solar yield</span></label>
+          <select class="select" id="f-state"><option value="Delhi">Delhi</option></select>
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0">Local yield: <strong id="r-state-gen">4.1 kWh/kW/day</strong></p>
+        </div>
+
+        <div class="field">
+          <label for="f-bill">Average monthly electricity bill</label>
+          <div class="input-group"><span class="prefix">&#8377;</span><input class="input" type="number" id="f-bill" value="3500" min="300" max="500000" step="100"></div>
+        </div>
+
+        <div class="field">
+          <label for="f-tariff">Your effective rate per unit <span class="lbl-hint">total bill &divide; total units</span></label>
+          <div class="input-group"><span class="prefix">&#8377;</span><input class="input" type="number" id="f-tariff" value="7" min="1" max="30" step="0.25"></div>
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0">Not sure? The <a href="{{ page.p }}bill-calculator.html">bill calculator</a> works it out from your DISCOM's slabs.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-roof">Usable roof area <span class="lbl-hint">optional &mdash; caps the system size</span></label>
+          <div class="input-group"><input class="input" type="number" id="f-roof" placeholder="Leave blank if unsure" min="0" step="10"><span class="prefix" style="border-left:0;border-radius:0 14px 14px 0">sq ft</span></div>
+        </div>
+
+        <hr>
+        <h4>If you finance it</h4>
+        <div class="field">
+          <label for="f-tenure">Loan tenure &mdash; <span id="f-tenure-v">5 years</span></label>
+          <input type="range" id="f-tenure" min="1" max="10" step="1" value="5">
+          <div class="range-row"><span>1 yr</span><span>10 yrs</span></div>
+        </div>
+        <div class="field">
+          <label for="f-rate">Interest rate (% p.a.)</label>
+          <input class="input" type="number" id="f-rate" value="8.5" min="5" max="20" step="0.25">
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0">Rooftop solar is a priority-sector loan — public banks typically quote 7&ndash;10.5% for residential systems up to 10 kW.</p>
+        </div>
+
+        <div class="callout warn hide" id="r-roof-warn">
+          <b>Roof-limited</b>
+          <p class="mb0" style="font-size:.9rem">Your roof area caps the system below what your consumption justifies. You will offset less than 100% of your bill — still worthwhile, just size your expectations to the smaller number.</p>
+        </div>
+      </div>
+
+      <div class="calc-out">
+        <div class="result-hero">
+          <div class="rh-label">25-year net saving</div>
+          <div class="rh-value" id="r-lifetime">&#8377;0</div>
+          <div class="rh-note">After subsidy, maintenance and an inverter replacement</div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat"><b id="r-kw">3 kW</b><span>System size</span></div>
+          <div class="stat"><b id="r-payback">4.2 years</b><span>Payback</span></div>
+          <div class="stat"><b id="r-irr">22%</b><span>IRR</span></div>
+        </div>
+
+        <div class="kv"><span class="k">Installed cost (market range)</span><span class="v" id="r-cost">&#8377;0</span></div>
+        <div class="kv"><span class="k">Subsidy you receive</span><span class="v pos" id="r-subsidy">&#8377;0</span></div>
+        <div class="kv"><span class="k" style="padding-left:12px;font-size:.82rem" id="r-subsidy-split">PM Surya Ghar central subsidy</span><span class="v"></span></div>
+        <div class="kv"><span class="k"><b>Net out of pocket</b></span><span class="v" id="r-net">&#8377;0</span></div>
+        <div class="kv"><span class="k">Year-1 saving</span><span class="v pos" id="r-year1">&#8377;0</span></div>
+        <div class="kv"><span class="k">Average monthly saving</span><span class="v" id="r-monthly">&#8377;0</span></div>
+        <div class="kv"><span class="k">NPV at 8% discount rate</span><span class="v" id="r-npv">&#8377;0</span></div>
+
+        <h4 style="margin:22px 0 4px">Cumulative position, year by year</h4>
+        <p class="dim" style="font-size:.8rem;margin:0">Amber bars are the years you are still in the red.</p>
+        <div class="bars" id="r-bars"></div>
+        <div class="bar-labels" id="r-bar-labels"></div>
+
+        <h4 style="margin:22px 0 10px">Generation &amp; footprint</h4>
+        <div class="kv"><span class="k">Generation</span><span class="v" id="r-gen-day">0 units/day</span></div>
+        <div class="kv"><span class="k">Annual generation</span><span class="v" id="r-gen-year">0 units</span></div>
+        <div class="kv"><span class="k">Roof area needed</span><span class="v" id="r-area">0 sq ft</span></div>
+        <div class="kv"><span class="k">Panels required</span><span class="v" id="r-panels">0 panels</span></div>
+        <div class="kv"><span class="k">CO&#8322; avoided</span><span class="v" id="r-co2">0 tonnes/yr</span></div>
+        <div class="kv"><span class="k">Equivalent trees planted</span><span class="v" id="r-trees">0 trees</span></div>
+
+        <div class="card mt3" style="background:var(--bg-2)">
+          <h4 style="margin-bottom:.5em">On finance</h4>
+          <div class="kv"><span class="k">Monthly EMI</span><span class="v" id="r-emi">&#8377;0</span></div>
+          <div class="kv"><span class="k">Saving minus EMI</span><span class="v pos" id="r-emi-delta">&#8377;0</span></div>
+          <p class="muted" style="font-size:.88rem;margin:12px 0 0" id="r-emi-verdict"></p>
+        </div>
+
+        <a class="btn btn-primary btn-block btn-lg mt3" href="{{ page.p }}quote.html">Get three real quotes for this system &rarr;</a>
+        <p class="dim center mt1" style="font-size:.78rem">Free. We benchmark the &#8377;/W before you talk to anyone.</p>
+      </div>
+    </div>
+
+    {% include ad-leader.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap sidebar-layout">
+    <div class="prose">
+      <h2>What this model assumes — and why</h2>
+      <p>A savings figure is only as honest as the assumptions behind it. Here is every one we use, so you can argue with them.</p>
+
+      <div class="table-wrap" style="margin:1.5em 0">
+        <table>
+          <thead><tr><th>Assumption</th><th class="num">Value</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>Generation</td><td class="num">3.3&ndash;4.9 kWh/kW/day</td><td>Varies by state. Rajasthan and Gujarat sit at the top, the north-east at the bottom. Long-run average for an unshaded, well-oriented array.</td></tr>
+            <tr><td>Panel degradation</td><td class="num">0.6% / year</td><td>Standard warranty curve for mono PERC modules. Year 25 output is roughly 86% of year 1.</td></tr>
+            <tr><td>Tariff escalation</td><td class="num">4% / year</td><td>Conservative against the historical Indian trend. Every year tariffs rise, your solar is worth more.</td></tr>
+            <tr><td>Maintenance</td><td class="num">&#8377;500/kW/year</td><td>Cleaning and periodic inspection. Skipping cleaning in a dusty region costs far more in lost yield.</td></tr>
+            <tr><td>Inverter replacement</td><td class="num">&#8377;6,000/kW in year 12</td><td>Inverters rarely last the full 25 years. Most calculators quietly omit this. We charge it to the model.</td></tr>
+            <tr><td>Export credit</td><td class="num">75% of retail tariff</td><td>Units you export are settled below retail in most states. Assuming 1:1 overstates returns for anyone who generates more than they consume.</td></tr>
+            <tr><td>Discount rate for NPV</td><td class="num">8%</td><td>Roughly what the same money earns in a safe fixed-income instrument — the real alternative use of the cash.</td></tr>
+            <tr><td>System life</td><td class="num">25 years</td><td>The standard performance-warranty horizon. Panels often keep working past it at reduced output.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout tip">
+        <b>The one number to sanity-check a quote</b>
+        <p class="mb0">Divide the quoted price by the system size in watts. For a residential grid-tied system with ALMM modules you should be seeing roughly ₹36–70 per watt depending on size — smaller systems cost more per watt because the fixed costs of structure, cabling, net meter and labour spread over fewer kilowatts. A 1 kW quote at ₹65/W is normal; a 10 kW quote at ₹65/W is not.</p>
+      </div>
+
+      <h2>Where the money actually comes from</h2>
+      <p>Rooftop solar returns are driven by three things, in this order of importance:</p>
+      <ol>
+        <li><strong>Your effective tariff.</strong> Every unit you generate displaces a unit you would have bought. At ₹8/unit a kilowatt earns about ₹12,000 a year; at ₹4/unit it earns half that and the payback roughly doubles. This is why solar is a no-brainer in Maharashtra's upper slabs and marginal in a heavily subsidised state.</li>
+        <li><strong>The subsidy.</strong> ₹78,000 on a 3 kW system is roughly 45% of the project cost. It is the single largest lever, it applies only to the first three kilowatts, and it is the reason 3 kW is the most common residential size in India right now.</li>
+        <li><strong>Local yield.</strong> The gap between Rajasthan at 4.8 and West Bengal at 3.6 kWh/kW/day is a 33% difference in output from identical hardware. It changes payback by well over a year.</li>
+      </ol>
+
+      <h2>When rooftop solar does not pay</h2>
+      <p>We would rather you did not spend ₹1.5 lakh on a bad fit. Solar is genuinely weak in these situations:</p>
+      <ul>
+        <li><strong>You are in a heavily subsidised slab.</strong> If your state gives you 200&ndash;300 free units and you consume under that, your effective tariff is near zero and there is nothing to save. Punjab, Karnataka and Telangana households at low consumption frequently fall here.</li>
+        <li><strong>You are renting, or plan to move within four years.</strong> The payback is typically 2.5&ndash;5 years and the subsidy is tied to the name on the connection. A system you leave behind is a gift to the landlord.</li>
+        <li><strong>Your roof is shaded after 10am.</strong> Even partial shading across a string disproportionately cuts output. An overhanging tree or a neighbour's proposed extra floor can destroy the economics.</li>
+        <li><strong>You have under 150 sq ft of clear roof.</strong> Below about 1.5 kW, the fixed costs of structure, net meter and labour dominate and per-watt pricing gets punishing.</li>
+      </ul>
+
+      <h2>Related reading</h2>
+      <ul>
+        <li><a href="{{ page.p }}guides/pm-surya-ghar-subsidy-guide.html">PM Surya Ghar subsidy: the complete 2026 guide</a></li>
+        <li><a href="{{ page.p }}guides/rooftop-solar-cost-india.html">What rooftop solar really costs in India, kW by kW</a></li>
+        <li><a href="{{ page.p }}guides/net-metering-india.html">Net metering explained without the jargon</a></li>
+        <li><a href="{{ page.p }}subsidy-calculator.html">Subsidy calculator &mdash; exact rupee figure for your size</a></li>
+      </ul>
+    </div>
+
+    <aside class="sticky-side">
+      {% include ad-rect.html %}
+      <div class="card" style="border-color:var(--brand)">
+        <span class="badge">Next step</span>
+        <h4 class="mt2">Three benchmarked quotes</h4>
+        <p class="muted" style="font-size:.9rem">We send your requirement to empanelled installers in your PIN code and tell you the fair &#8377;/W first.</p>
+        <a class="btn btn-primary btn-sm btn-block" href="{{ page.p }}quote.html">Get free quotes</a>
+      </div>
+      <div class="card mt2">
+        <h4>Other calculators</h4>
+        <ul style="list-style:none;padding:0;margin:0;font-size:.92rem">
+          <li style="margin-bottom:10px"><a href="{{ page.p }}subsidy-calculator.html">PM Surya Ghar subsidy</a></li>
+          <li style="margin-bottom:10px"><a href="{{ page.p }}emi-calculator.html">Solar EMI</a></li>
+          <li style="margin-bottom:10px"><a href="{{ page.p }}roof-calculator.html">Roof area to kW</a></li>
+          <li><a href="{{ page.p }}bill-calculator.html">Electricity bill</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>

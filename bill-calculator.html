@@ -1,0 +1,160 @@
+---
+{"layout": "default", "slug": "bill-calculator.html", "calc": "bill", "title": "Electricity Bill Calculator India 2026 — Slab-Wise for 35+ DISCOMs | GridPe", "desc": "Calculate your electricity bill slab by slab for MSEDCL, BESCOM, BSES, TANGEDCO, UPPCL and 35+ Indian DISCOM tariff schedules. Shows energy charge, fixed charge, fuel surcharge, duty and your true rate per unit.", "schema": [{"@type": "WebApplication", "name": "GridPe Electricity Bill Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "description": "Slab-wise Indian electricity bill calculator covering 35+ distribution company tariff schedules."}]}
+---
+<section class="section-sm">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ page.p }}index.html">Home</a> &rsaquo; Calculators &rsaquo; Electricity Bill</div>
+    <h1>Electricity Bill Calculator</h1>
+    <p class="lede" style="max-width:70ch">Pick your state and distribution company, enter your units, and see exactly where every rupee of your bill goes — energy charge slab by slab, fixed charge on your sanctioned load, fuel surcharge, electricity duty and meter rent. Tariff data as of <strong id="data-asof">September 2026</strong>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="calc" id="calc-bill">
+      <div class="calc-in">
+        <h3 style="margin-bottom:1em">Your connection</h3>
+
+        <div class="field">
+          <label for="f-state">State</label>
+          <select class="select" id="f-state"><option value="">Loading…</option></select>
+        </div>
+
+        <div class="field">
+          <label for="f-discom">Distribution company (DISCOM)</label>
+          <select class="select" id="f-discom"><option value="">Select a state first</option></select>
+        </div>
+
+        <div class="field">
+          <span class="lbl">What do you want to enter?</span>
+          <div class="radio-cards">
+            <label class="radio-card"><input type="radio" name="mode" value="units" checked><span>Units consumed<small>From your meter</small></span></label>
+            <label class="radio-card"><input type="radio" name="mode" value="amount"><span>Bill amount<small>Work backwards</small></span></label>
+          </div>
+        </div>
+
+        <div class="field" id="row-units">
+          <label for="f-units">Units consumed this month <span class="lbl-hint">kWh</span></label>
+          <input class="input" type="number" id="f-units" value="250" min="0" max="20000" step="1">
+        </div>
+
+        <div class="field hide" id="row-amount">
+          <label for="f-amount">Bill amount you received</label>
+          <div class="input-group"><span class="prefix">&#8377;</span><input class="input" type="number" id="f-amount" value="2000" min="0" step="10"></div>
+        </div>
+
+        <div class="field">
+          <label for="f-load">Sanctioned load <span class="lbl-hint">printed on your bill, in kW</span></label>
+          <input class="input" type="number" id="f-load" value="2" min="0.5" max="50" step="0.5">
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0">Fixed charges are billed on this number whether you use the power or not. Most 2&ndash;3 BHK homes are sanctioned at 2&ndash;5 kW.</p>
+        </div>
+
+        <div class="callout tip" style="margin-top:22px">
+          <b>Reading your bill</b>
+          <p class="mb0" style="font-size:.9rem">Units are shown as "consumption" or "kWh"; sanctioned load appears as "SL", "connected load" or "contract demand". Bi-monthly states such as Tamil Nadu bill two months at a time — enter the two-month total there.</p>
+        </div>
+      </div>
+
+      <div class="calc-out">
+        <div class="result-hero">
+          <div class="rh-label">Estimated bill</div>
+          <div class="rh-value" id="r-total">&#8377;0</div>
+          <div class="rh-note"><span id="r-units">0 units</span> &middot; <span id="r-daily">0 units/day</span></div>
+        </div>
+
+        <div class="kv"><span class="k">Energy charge</span><span class="v" id="r-energy">&#8377;0</span></div>
+        <div class="kv"><span class="k">Fixed / demand charge</span><span class="v" id="r-fixed">&#8377;0</span></div>
+        <div class="kv"><span class="k">Fuel &amp; power purchase adjustment</span><span class="v" id="r-fppca">&#8377;0</span></div>
+        <div class="kv"><span class="k">Electricity duty / tax</span><span class="v" id="r-duty">&#8377;0</span></div>
+        <div class="kv"><span class="k">Meter rent</span><span class="v" id="r-meter">&#8377;0</span></div>
+        <div class="kv"><span class="k"><b>Your true effective rate</b></span><span class="v pos" id="r-eff">&#8377;0/unit</span></div>
+        <div class="kv"><span class="k">Projected annual spend</span><span class="v" id="r-year">&#8377;0</span></div>
+
+        <p class="dim hide" id="r-note" style="font-size:.85rem;margin-top:14px"></p>
+
+        <h4 style="margin:24px 0 10px">Slab-by-slab breakdown</h4>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Slab (units)</th><th class="num">Rate</th><th class="num">Units</th><th class="num">Charge</th></tr></thead>
+            <tbody id="r-slabs"></tbody>
+          </table>
+        </div>
+
+        <div class="card mt3" style="border-color:var(--brand);background:var(--brand-glow)">
+          <h4 style="margin-bottom:.4em">A <span id="x-kw">3 kW</span> rooftop system would cover this</h4>
+          <p class="muted" style="font-size:.9rem;margin-bottom:14px">At your consumption, solar would offset roughly <strong id="x-save">&#8377;0</strong> of electricity a year, and the PM Surya Ghar subsidy pays a large slice of the install cost.</p>
+          <a class="btn btn-primary btn-sm" id="x-link" href="{{ page.p }}solar-calculator.html">Run the solar numbers &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    {% include ad-leader.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap sidebar-layout">
+    <div class="prose">
+      <h2>How an Indian electricity bill is actually built</h2>
+      <p>Almost nobody is charged a single flat rate per unit. Your bill is assembled from four or five separate components, and understanding which one is growing tells you whether the fix is behavioural, contractual or structural.</p>
+
+      <h3>1. Energy charge (the slabs)</h3>
+      <p>This is consumption multiplied by a rate that steps up as you use more. Two structures exist in India and they behave very differently:</p>
+      <ul>
+        <li><strong>Telescopic</strong> — each slab rate applies only to the units inside that slab. Consuming 250 units in Maharashtra means the first 100 are billed at the lowest rate and only the next 150 at the higher one. Most states work this way.</li>
+        <li><strong>Flat (non-telescopic)</strong> — the slab your total lands in sets one rate for every unit you consumed. Telangana and Kerala below 250 units use this. Crossing a boundary by a single unit can raise the rate on your entire consumption, which is why a 201st unit occasionally costs someone several hundred rupees.</li>
+      </ul>
+
+      <h3>2. Fixed or demand charge</h3>
+      <p>Levied per kilowatt of <em>sanctioned load</em> per month — not on what you consume. It is charged even in a month you are travelling and use nothing. People who upgraded their sanctioned load years ago for an air conditioner they no longer own are quietly paying for it every month. If your consumption never approaches your sanctioned load, applying for a load reduction is one of the few genuinely free savings available.</p>
+
+      <h3>3. Fuel and power purchase cost adjustment (FPPCA / FAC / PPAC)</h3>
+      <p>A pass-through of what the DISCOM paid for power, usually expressed as a percentage of the energy charge and revised quarterly or monthly. In Delhi it has run at roughly a third of the energy charge — a material number most consumers never look at. It is the single most volatile line on your bill and the one most likely to be slightly out of date in any calculator, including this one.</p>
+
+      <h3>4. Electricity duty and taxes</h3>
+      <p>A state levy on the sum of energy and fixed charges. It ranges from zero in several states to 16% in Maharashtra. Nothing you do changes it.</p>
+
+      <h3>5. Subsidy adjustments</h3>
+      <p>Several states now zero out part of the bill for eligible households: 100% up to 200 units in Delhi, up to 200 units under Gruha Jyoti in Karnataka and Gruha Jyothi in Telangana, 300 units in Punjab, the first 100 units free in Tamil Nadu, 200 units in Jharkhand. These are applied after the calculation above and usually require opting in. This calculator shows the pre-subsidy figure, which is also the number that matters when you are evaluating solar — because a subsidy can be withdrawn and an installed system cannot.</p>
+
+      <h2>The effective rate is the number that matters</h2>
+      <p>When you are deciding on rooftop solar, an air conditioner upgrade or an EV, the relevant figure is not your slab rate — it is your <strong>effective rate</strong>: total bill divided by total units, with every charge included. It is nearly always higher than the headline slab rate people quote, and it is the correct input for any savings calculation. That is the figure this calculator puts in bold, and the one our <a href="{{ page.p }}solar-calculator.html">solar calculator</a> uses by default.</p>
+
+      <h2>Frequently asked</h2>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Why does the calculator's figure differ from my actual bill?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>Four usual suspects: your fuel surcharge percentage has been revised since our data snapshot; you are on a different consumer category (single-phase versus three-phase, domestic versus mixed-use); a state subsidy has been applied to your bill; or there are arrears, a late-payment surcharge or a rebate on it. Small gaps are normal. If you are out by more than about 10%, the category is usually the reason.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can I reduce my fixed charges?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>Yes — by applying to your DISCOM for a reduction in sanctioned load, provided your actual maximum demand justifies it. Check your bill for a "maximum demand" or "MD" reading over the last twelve months. If your peak never crosses, say, 3 kW and you are sanctioned at 6 kW, you are paying double the fixed charge for nothing. There is usually a small processing fee and a waiting period, and you cannot immediately re-upgrade.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Does a higher slab rate apply to all my units?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>In most states, no — the structure is telescopic, so only the units above a boundary are charged at the higher rate. In the handful of flat-rate states it does apply to everything, and there the cliff is real. The calculator applies whichever structure your DISCOM actually uses and labels it in the slab table.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Which appliance is driving my bill?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>In almost every Indian home it is one of three: air conditioning in summer, a storage geyser in winter, or an old non-inverter refrigerator all year. Our <a href="{{ page.p }}appliance-calculator.html">appliance load calculator</a> builds your profile and ranks the top five consumers, which is usually more useful than guessing.</p></div></div>
+      </div>
+    </div>
+
+    <aside class="sticky-side">
+      {% include ad-rect.html %}
+      <div class="card">
+        <h4>Related tools</h4>
+        <ul style="list-style:none;padding:0;margin:0;font-size:.92rem">
+          <li style="margin-bottom:10px"><a href="{{ page.p }}appliance-calculator.html">Appliance load calculator</a></li>
+          <li style="margin-bottom:10px"><a href="{{ page.p }}solar-calculator.html">Solar savings calculator</a></li>
+          <li style="margin-bottom:10px"><a href="{{ page.p }}tariffs.html">State tariff tables</a></li>
+          <li><a href="{{ page.p }}discoms.html">DISCOM directory</a></li>
+        </ul>
+      </div>
+      <div class="card mt2" style="border-color:var(--brand)">
+        <h4>Cut the bill permanently</h4>
+        <p class="muted" style="font-size:.9rem">Rooftop solar with the PM Surya Ghar subsidy typically pays back in 2.5&ndash;5 years, depending on your tariff and state.</p>
+        <a class="btn btn-primary btn-sm btn-block" href="{{ page.p }}quote.html">Get free quotes</a>
+      </div>
+    </aside>
+  </div>
+</section>

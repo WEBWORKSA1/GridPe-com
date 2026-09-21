@@ -1,0 +1,100 @@
+---
+{"layout": "default", "slug": "contests.html", "title": "GridPe Contests & Prizes — Skill-Based Energy Challenges", "desc": "GridPe runs skill-based contests for Indian readers: bill-reduction challenges, solar quote audits and data-correction bounties, with cash prizes and transparent judging.", "schema": [{"@type": "WebPage", "name": "GridPe Contests", "description": "Skill-based contests and prizes run by GridPe."}]}
+---
+<section class="section-sm">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ page.p }}index.html">Home</a> &rsaquo; Contests</div>
+    <h1>Contests &amp; Prizes</h1>
+    <p class="lede" style="max-width:72ch">We run skill-based challenges — not lucky draws. Entries are judged on merit against published criteria, which keeps everything on the right side of Indian prize-competition law and makes winning worth something.</p>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="grid g3">
+      <div class="card card-hover">
+        <span class="badge amber">Open</span>
+        <h3 class="mt2">The Bill-Cut Challenge</h3>
+        <p class="muted">Cut your monthly electricity consumption by the largest verified percentage over two billing cycles. Send before-and-after bills with the meter readings visible.</p>
+        <div class="kv"><span class="k">Prize pool</span><span class="v">&#8377;25,000</span></div>
+        <div class="kv"><span class="k">Judged on</span><span class="v">Verified % reduction</span></div>
+        <a class="btn btn-primary btn-sm btn-block mt2" href="#enter">Enter</a>
+      </div>
+      <div class="card card-hover">
+        <span class="badge">Open</span>
+        <h3 class="mt2">Quote Audit Bounty</h3>
+        <p class="muted">Send us a real, anonymised rooftop solar quote with a written analysis of where it is padded or mis-specified. Best analysis each month wins.</p>
+        <div class="kv"><span class="k">Prize</span><span class="v">&#8377;5,000 monthly</span></div>
+        <div class="kv"><span class="k">Judged on</span><span class="v">Analytical quality</span></div>
+        <a class="btn btn-primary btn-sm btn-block mt2" href="#enter">Enter</a>
+      </div>
+      <div class="card card-hover">
+        <span class="badge blue">Always open</span>
+        <h3 class="mt2">Data Correction Bounty</h3>
+        <p class="muted">Find a genuine error in any GridPe dataset — a tariff slab, a subsidy rule, an EV specification — and cite the primary source. Every accepted correction is paid.</p>
+        <div class="kv"><span class="k">Per accepted fix</span><span class="v">&#8377;500&ndash;2,000</span></div>
+        <div class="kv"><span class="k">Judged on</span><span class="v">Source verification</span></div>
+        <a class="btn btn-primary btn-sm btn-block mt2" href="#enter">Submit a correction</a>
+      </div>
+    </div>
+    {% include ad-leader.html %}
+  </div>
+</section>
+
+<section class="section" id="enter">
+  <div class="wrap sidebar-layout">
+    <div>
+      <div class="lead-band">
+        <div class="lead-form-inner">
+          <h2 style="margin-bottom:.3em">Enter a contest</h2>
+          <p style="margin-bottom:24px">One form for all three. Attach evidence by replying to our acknowledgement email.</p>
+          <form class="js-form" data-kind="Contest Entry"
+                data-success-title="Entry recorded"
+                data-success-msg="We'll acknowledge by email and tell you exactly what evidence to attach. Judging results are published on this page.">
+            <div class="grid g2">
+              <div class="field"><label for="c-name">Name</label><input class="input" id="c-name" name="name" required></div>
+              <div class="field"><label for="c-phone">Phone</label><div class="input-group"><span class="prefix">+91</span><input class="input" id="c-phone" name="phone" data-type="phone" maxlength="10" inputmode="numeric" required></div></div>
+            </div>
+            <div class="field"><label for="c-email">Email</label><input class="input" type="email" id="c-email" name="email" required></div>
+            <div class="field">
+              <label for="c-which">Which contest?</label>
+              <select class="select" id="c-which" name="contest" required>
+                <option value="">Select…</option>
+                <option>The Bill-Cut Challenge</option>
+                <option>Quote Audit Bounty</option>
+                <option>Data Correction Bounty</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="c-entry">Your entry</label>
+              <textarea class="textarea" id="c-entry" name="entry" placeholder="For the Bill-Cut Challenge: your before and after units, and what you changed. For the Quote Audit: the quote figures and your analysis. For a correction: the page, the error, and the primary source that proves it." required></textarea>
+            </div>
+            <div class="field"><label class="check"><input type="checkbox" name="consent" value="yes" required><span>I have read the contest terms below, I am 18 or older, and I confirm my entry is my own work.</span></label></div>
+            <button class="btn btn-accent btn-block" type="submit">Submit entry</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="prose mt3">
+        <h2>Contest terms</h2>
+        <p><strong>Organiser.</strong> GridPe (GridPe.com), an independent digital publisher. All contests are administered by the organiser and are not sponsored, endorsed or administered by, or associated with, any social media platform, search engine or government body.</p>
+        <p><strong>Nature of the contest.</strong> All GridPe contests are <strong>skill-based competitions</strong>. Entries are assessed on merit against the published judging criteria by the GridPe editorial desk. No element of chance determines the outcome, and there is no lottery, lucky draw or random selection at any stage.</p>
+        <p><strong>No purchase necessary.</strong> Entry is free. No purchase, subscription or payment of any kind is required to enter or to win, and making one does not improve your chances.</p>
+        <p><strong>Eligibility.</strong> Open to residents of India aged 18 or over. Employees of the organiser, their immediate families, and anyone with a commercial relationship with the organiser are not eligible. Entries from jurisdictions where such competitions are restricted by local law will be disqualified without prejudice; it is the entrant's responsibility to confirm eligibility in their own state.</p>
+        <p><strong>Entry period.</strong> Each contest's window is stated on its card above, in Indian Standard Time. Entries received outside the window are not considered.</p>
+        <p><strong>Judging.</strong> Entries are scored against the criteria named on each contest card. Where evidence cannot be verified, the entry is excluded. The judges' decision is final and no correspondence will be entered into regarding individual scores.</p>
+        <p><strong>Prizes.</strong> Prizes are as stated, paid in Indian rupees by bank transfer or UPI to an account in the winner's own name. Prizes are not transferable and there is no cash alternative beyond the stated cash prize. Where the value of a prize exceeds ₹10,000, tax is deducted at source under section 194B of the Income-tax Act, 1961 and the winner is responsible for any further tax liability.</p>
+        <p><strong>Winner announcement.</strong> Winners are notified by email within fourteen days of the contest closing and published on this page by first name and city only. A winner who does not respond within fourteen days of notification forfeits the prize.</p>
+        <p><strong>Use of entries.</strong> By entering you grant GridPe a non-exclusive right to publish your entry, in whole or in part and in anonymised form, in editorial content. You retain ownership of your submission. Personal data is handled in accordance with our <a href="{{ page.p }}privacy.html">privacy policy</a> and is not shared with advertisers or installers.</p>
+        <p><strong>Cancellation.</strong> The organiser may amend, suspend or cancel a contest where circumstances outside its reasonable control make it necessary, and will publish notice of any such change on this page.</p>
+      </div>
+    </div>
+    <aside class="sticky-side">
+      {% include ad-rect.html %}
+      <div class="card">
+        <h4>Past winners</h4>
+        <p class="muted" style="font-size:.9rem">Results are published here after each judging round closes. Nothing to show yet — the first cycle is open now.</p>
+      </div>
+    </aside>
+  </div>
+</section>
