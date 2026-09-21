@@ -1,0 +1,92 @@
+---
+{"layout": "default", "slug": "appliance-calculator.html", "calc": "appliance", "title": "Appliance Electricity Consumption Calculator India — Units & Cost | GridPe", "desc": "Build your home's load profile from 50 common Indian appliances and see monthly units, rupee cost, connected load and which five devices are actually driving your electricity bill.", "schema": [{"@type": "WebApplication", "name": "Appliance Load & Consumption Calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}}]}
+---
+<section class="section-sm">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ page.p }}index.html">Home</a> &rsaquo; Calculators &rsaquo; Appliance Load</div>
+    <h1>Appliance Load &amp; Consumption Calculator</h1>
+    <p class="lede" style="max-width:72ch">Add your appliances, set quantities and daily hours, and see exactly where your units go. Most households discover that three devices account for more than half the bill — and usually not the ones they suspected.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="calc" id="calc-appliance" style="grid-template-columns:1.35fr .65fr">
+      <div class="calc-in">
+        <div class="filter-bar">
+          <select class="select" id="f-add" style="flex:2 1 260px"><option value="">Loading appliances…</option></select>
+          <div class="input-group" style="flex:1 1 150px">
+            <span class="prefix">&#8377;</span>
+            <input class="input" type="number" id="f-tariff" value="8" min="1" max="30" step="0.25" aria-label="Rate per unit">
+          </div>
+        </div>
+        <p class="dim" style="font-size:.8rem;margin:0 0 16px">Edit quantity and hours directly in the table. Five common appliances are pre-loaded to get you started.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Appliance</th><th class="num">Qty</th><th class="num">Watts</th><th class="num">Hrs/day</th><th class="num">Units/mo</th><th class="num">Cost/mo</th></tr></thead>
+            <tbody id="r-rows"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="calc-out">
+        <div class="result-hero">
+          <div class="rh-label">Estimated monthly bill</div>
+          <div class="rh-value" id="r-bill">&#8377;0</div>
+          <div class="rh-note" id="r-units">0 units/month</div>
+        </div>
+        <div class="kv"><span class="k">Connected load</span><span class="v" id="r-load">0 kW</span></div>
+        <div class="kv"><span class="k">Suggested sanctioned load</span><span class="v" id="r-sanction">0 kW</span></div>
+        <div class="kv"><span class="k">Annual spend</span><span class="v" id="r-year">&#8377;0</span></div>
+        <div class="kv"><span class="k">Solar size to offset this</span><span class="v pos" id="r-solar">0 kW</span></div>
+
+        <h4 style="margin:22px 0 6px">Your top five consumers</h4>
+        <div id="r-top"></div>
+
+        <div class="callout tip mt3">
+          <b>Sanctioned load ≠ connected load</b>
+          <p class="mb0" style="font-size:.88rem">You never run everything at once. DISCOMs apply a diversity factor — roughly 60% of connected load is a reasonable sanction for a typical home. Sanctioning more than you need means paying fixed charges on capacity you never draw.</p>
+        </div>
+        <a class="btn btn-primary btn-block mt2" href="{{ page.p }}solar-calculator.html">Offset this with solar &rarr;</a>
+      </div>
+    </div>
+    {% include ad-leader.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap sidebar-layout">
+    <div class="prose">
+      <h2>The arithmetic</h2>
+      <blockquote><p class="mb0"><strong>Units per month</strong> = watts × hours per day × 30 × quantity ÷ 1000</p></blockquote>
+      <p>One "unit" on your bill is one kilowatt-hour: a 1,000 W device running for one hour. A 9 W LED bulb burning six hours a day for a month uses 1.6 units — about ₹13. A 2,000 W geyser used one hour a day uses 60 units — about ₹480. That ratio, roughly 37 to 1, is why bulb-switching campaigns achieve so much less than people expect and why the geyser is where the money actually is.</p>
+
+      <h2>The three appliances that decide an Indian electricity bill</h2>
+      <h3>1. Air conditioning</h3>
+      <p>A 1.5-ton three-star inverter AC draws roughly 1,300 W. Six hours a night for thirty nights is about 234 units — frequently more than half of a summer bill on its own. The lever that matters is not the star rating so much as the thermostat: each degree you lower the setting raises consumption by roughly 6%. Running at 24°C instead of 20°C cuts consumption by about a fifth, and the comfort difference overnight is small.</p>
+
+      <h3>2. The storage geyser</h3>
+      <p>A 2,000&ndash;2,500 W element is the single largest load in most homes. Its consumption is governed almost entirely by how long it stays switched on, not how much hot water you actually use, because it reheats the tank continually. A timer, or simply switching it off at the board after the morning, is the highest-return five-minute change available in an Indian home in winter.</p>
+
+      <h3>3. The old refrigerator</h3>
+      <p>Refrigerators run every hour of every day, which makes them uniquely sensitive to efficiency. A twelve-year-old non-inverter 250 L unit can draw two to three times what a current five-star equivalent does. Unlike the other two, this one is not a behavioural fix — it is a replacement decision, and on a large old unit the payback on a new five-star model is often under four years.</p>
+
+      <div class="callout warn">
+        <b>The star-rating trap</b>
+        <p class="mb0">BEE star ratings are re-benchmarked periodically. A five-star air conditioner bought in 2016 would rate around three stars under the current table. When comparing an old appliance to a new one, compare the actual consumption figures on the label, not the stars.</p>
+      </div>
+
+      <h2>Where a phantom load hides</h2>
+      <p>Standby draw is real but usually overstated. A set-top box at 15 W running continuously is 11 units a month — worth switching off. A television on standby at 0.5 W is 0.36 units — not worth thinking about. The genuine standby offender in Indian homes is the inverter: a backup inverter with a battery on float can draw 40&ndash;70 W continuously, which is 30&ndash;50 units a month, or ₹250&ndash;400, spent purely on keeping a battery topped up.</p>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="{{ page.p }}bill-calculator.html">Electricity bill calculator — slab-wise</a></li>
+        <li><a href="{{ page.p }}guides/why-electricity-bill-high.html">Twelve reasons your bill is higher than it should be</a></li>
+        <li><a href="{{ page.p }}solar-calculator.html">Solar savings calculator</a></li>
+      </ul>
+    </div>
+    <aside class="sticky-side">{% include ad-rect.html %}</aside>
+  </div>
+</section>

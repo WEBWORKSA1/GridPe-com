@@ -1,0 +1,105 @@
+---
+{"layout": "default", "slug": "charging-calculator.html", "calc": "charging", "title": "EV Charging Cost & Time Calculator India — Home vs Public | GridPe", "desc": "How long does an EV take to charge and what does it cost? Compare 3.3 kW portable, 7.2 kW wallbox and 50–180 kW DC fast charging for 20 Indian EVs, with cost per session and per kilometre.", "schema": [{"@type": "WebApplication", "name": "EV Charging Cost and Time Calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}}]}
+---
+<section class="section-sm">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ page.p }}index.html">Home</a> &rsaquo; Calculators &rsaquo; Charging Cost &amp; Time</div>
+    <h1>EV Charging Cost &amp; Time Calculator</h1>
+    <p class="lede" style="max-width:72ch">Pick a car, pick a charger, set the state of charge you are going from and to. The calculator tells you the session time, the rupee cost, the kilometres added and — usefully — whether the car or the charger is the bottleneck.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="calc" id="calc-charging">
+      <div class="calc-in">
+        <h3 style="margin-bottom:1em">This session</h3>
+        <div class="field">
+          <label for="f-model">Electric vehicle</label>
+          <select class="select" id="f-model"></select>
+        </div>
+        <div class="field">
+          <label for="f-charger">Charger</label>
+          <select class="select" id="f-charger"></select>
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0" id="r-note"></p>
+        </div>
+        <div class="field">
+          <label for="f-from">Starting state of charge &mdash; <span id="f-from-v">20%</span></label>
+          <input type="range" id="f-from" min="0" max="95" step="5" value="20">
+        </div>
+        <div class="field">
+          <label for="f-to">Target state of charge &mdash; <span id="f-to-v">80%</span></label>
+          <input type="range" id="f-to" min="5" max="100" step="5" value="80">
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0">On DC fast charging, stopping at 80% is deliberate — the charge rate tapers hard above it, so the last 20% can take as long as the first 60.</p>
+        </div>
+        <div class="field">
+          <label for="f-rate">Rate per unit</label>
+          <div class="input-group"><span class="prefix">&#8377;</span><input class="input" type="number" id="f-rate" value="8" min="1" max="45" step="0.5"></div>
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0">Home domestic ₹5.50&ndash;11 · Public AC ₹10&ndash;18 · Public DC ₹18&ndash;26</p>
+        </div>
+        <div class="callout warn hide" id="r-dc-warn">
+          <b>No DC fast charging on this model</b>
+          <p class="mb0" style="font-size:.9rem">This vehicle has no CCS2 DC inlet. It can only be charged on AC — pick a 3.3 kW or 7.2 kW option.</p>
+        </div>
+      </div>
+
+      <div class="calc-out">
+        <div class="result-hero">
+          <div class="rh-label">Session cost</div>
+          <div class="rh-value" id="r-cost">&#8377;0</div>
+          <div class="rh-note">Takes <strong id="r-time">—</strong></div>
+        </div>
+
+        <div class="kv"><span class="k">Energy into the battery</span><span class="v" id="r-kwh">0 kWh</span></div>
+        <div class="kv"><span class="k">Range added</span><span class="v pos" id="r-km">0 km</span></div>
+        <div class="kv"><span class="k">Cost per kilometre</span><span class="v" id="r-perkm">&#8377;0/km</span></div>
+        <div class="kv"><span class="k">Actual charging power</span><span class="v" id="r-rate-cap">—</span></div>
+        <div class="kv"><span class="k">Charger installation</span><span class="v" id="r-install">—</span></div>
+
+        <h4 style="margin:24px 0 10px">Every charger compared</h4>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Charger</th><th class="num">Effective</th><th class="num">Time</th><th class="num">Cost</th></tr></thead>
+            <tbody id="r-compare"></tbody>
+          </table>
+        </div>
+        <p class="dim mt1" style="font-size:.78rem">Cost column assumes ₹8/unit on AC and ₹21/unit on DC.</p>
+      </div>
+    </div>
+    {% include ad-leader.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap sidebar-layout">
+    <div class="prose">
+      <h2>Why charging never hits the rated speed</h2>
+      <p>A 50 kW charger does not put 50 kWh into your car in an hour. Three things eat into it:</p>
+      <ul>
+        <li><strong>The car's own limit.</strong> Every EV has a maximum accept rate — 3.3 kW, 7.2 kW or 11 kW on AC; anywhere from 30 kW to 350 kW on DC. Plug a 7.2 kW-capable car into a 22 kW AC charger and you still get 7.2 kW. The lower of the two always wins, and this calculator tells you which one it is.</li>
+        <li><strong>Conversion losses.</strong> AC charging runs through the car's onboard rectifier and loses roughly 12%. DC bypasses it and loses about 6%.</li>
+        <li><strong>The taper.</strong> Battery management slows the charge as the pack fills, sharply above 80% state of charge. This is why every manufacturer quotes "10&ndash;80% in X minutes" and never "0&ndash;100%". Our DC estimates apply a 0.75 factor to account for it.</li>
+      </ul>
+
+      <h2>Home charging: 3.3 kW or 7.2 kW?</h2>
+      <p>The bundled 3.3 kW portable cable plugs into a heavy-duty 15 A socket and costs nothing extra. It adds roughly 25&ndash;30 km of range per hour, which means an overnight charge of 10 hours covers 250&ndash;300 km. For the large majority of Indian drivers covering under 60 km a day, that is comfortably sufficient and a wallbox is an unnecessary ₹28,000.</p>
+      <p>A 7.2 kW wallbox earns its cost in three situations: you drive more than about 120 km a day; you have a large battery (60 kWh and up) where 3.3 kW becomes genuinely slow; or you have two EVs sharing one parking bay. Note that 7.2 kW may push you over your sanctioned load — adding a 7.2 kW charger to a 5 kW sanctioned connection with an air conditioner running is how people trip their main breaker at 1am.</p>
+
+      <div class="callout tip">
+        <b>Ask for an EV tariff</b>
+        <p class="mb0">Several states offer a separate, lower tariff for EV charging on a dedicated meter, typically ₹5.50–8 per unit against a domestic slab rate that may be considerably higher. If you charge daily, applying for it is usually worth the paperwork — and it keeps EV consumption from pushing your household consumption into a higher slab, which is a second, quieter saving.</p>
+      </div>
+
+      <h2>Public charging economics</h2>
+      <p>Public DC fast charging in India runs at roughly ₹18&ndash;26 per unit against a domestic tariff around ₹8. You are paying a 2.5&ndash;3x premium for speed and convenience — which is fine occasionally and ruinous as a primary strategy. A driver doing 15,000 km a year entirely on public fast charging spends roughly ₹25,000 more than one charging at home. That difference alone is most of the reason to secure a home charging point before buying the car, not after.</p>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="{{ page.p }}ev-calculator.html">EV vs petrol cost calculator</a></li>
+        <li><a href="{{ page.p }}ev-models.html">EV model database</a></li>
+        <li><a href="{{ page.p }}guides/home-ev-charger-installation.html">Home charger installation guide</a></li>
+      </ul>
+    </div>
+    <aside class="sticky-side">{% include ad-rect.html %}</aside>
+  </div>
+</section>
