@@ -1,0 +1,9 @@
+{
+  "name": "GridPe — Electricity, Solar & EV Calculators",
+  "short_name": "GridPe",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#070B14",
+  "theme_color": "#00C6A2",
+  "description": "India's independent electricity, rooftop solar and EV money calculators."
+}

@@ -1,0 +1,92 @@
+{
+  "version": "2026.09",
+  "asOf": "September 2026",
+  "disclaimer": "Generation figures are long-run averages for a well-oriented, unshaded rooftop array. Prices are indicative all-in installed costs for ALMM-listed modules with a standard structure and net meter; actual quotes vary by roof type, structure height, cable runs, brand and state.",
+  "subsidy": {
+    "scheme": "PM Surya Ghar: Muft Bijli Yojana",
+    "structure": [
+      { "band": "First 2 kW", "ratePerKw": 30000 },
+      { "band": "3rd kW", "ratePerKw": 18000 },
+      { "band": "Beyond 3 kW", "ratePerKw": 0 }
+    ],
+    "cap": 78000,
+    "groupHousing": { "ratePerKw": 18000, "maxKw": 500, "note": "Common facilities of Group Housing Societies / RWAs — EV charging, lifts, lighting, water pumps." },
+    "conditions": [
+      "Residential consumers only; the electricity connection must be in the applicant's name.",
+      "Grid-connected system with a net meter; off-grid systems are not eligible.",
+      "Installation must be done by a vendor registered on the National Portal.",
+      "Modules and cells must be from the ALMM approved list; DCR cells are required.",
+      "Subsidy is credited directly to the applicant's bank account, typically within about 30 days of installation, inspection and net-meter commissioning."
+    ],
+    "portal": "https://pmsuryaghar.gov.in"
+  },
+  "stateTopUp": [
+    { "state": "Delhi", "perKw": 10000, "cap": 30000, "note": "₹10,000/kW capital subsidy capped at ₹30,000 (3 kW), plus a generation-based incentive of ₹3/kWh up to 3 kW and ₹2/kWh for 3–10 kW, via the Delhi Solar Portal." },
+    { "state": "Uttar Pradesh", "perKw": 15000, "cap": 30000, "note": "State subsidy for residential rooftop up to 3 kW." },
+    { "state": "Haryana", "perKw": 0, "cap": 0, "note": "Additional support targeted at Antyodaya households rather than a general per-kW top-up." },
+    { "state": "Gujarat", "perKw": 0, "cap": 0, "note": "Central subsidy only; Gujarat's Surya Gujarat framework routes through the same national portal." }
+  ],
+  "costPerKw": [
+    { "maxKw": 1, "low": 58000, "high": 70000 },
+    { "maxKw": 2, "low": 54000, "high": 64000 },
+    { "maxKw": 3, "low": 50000, "high": 60000 },
+    { "maxKw": 5, "low": 46000, "high": 55000 },
+    { "maxKw": 10, "low": 40000, "high": 48000 },
+    { "maxKw": null, "low": 36000, "high": 44000 }
+  ],
+  "assumptions": {
+    "generationDefault": 4.1,
+    "areaSqftPerKw": 90,
+    "degradationPctPerYear": 0.6,
+    "tariffEscalationPctPerYear": 4.0,
+    "systemLifeYears": 25,
+    "omPerKwPerYear": 500,
+    "inverterReplacementYear": 12,
+    "inverterCostPerKw": 6000,
+    "co2KgPerKwh": 0.71,
+    "treesPerTonneCo2": 45,
+    "discountRatePct": 8.0,
+    "loanRatePctDefault": 8.5,
+    "loanTenureYearsDefault": 5
+  },
+  "states": [
+    { "state": "Rajasthan", "kwhPerKwPerDay": 4.8, "peakSunHours": 5.7 },
+    { "state": "Gujarat", "kwhPerKwPerDay": 4.5, "peakSunHours": 5.4 },
+    { "state": "Ladakh", "kwhPerKwPerDay": 4.9, "peakSunHours": 5.8 },
+    { "state": "Madhya Pradesh", "kwhPerKwPerDay": 4.4, "peakSunHours": 5.2 },
+    { "state": "Maharashtra", "kwhPerKwPerDay": 4.3, "peakSunHours": 5.1 },
+    { "state": "Telangana", "kwhPerKwPerDay": 4.3, "peakSunHours": 5.1 },
+    { "state": "Andhra Pradesh", "kwhPerKwPerDay": 4.3, "peakSunHours": 5.1 },
+    { "state": "Karnataka", "kwhPerKwPerDay": 4.3, "peakSunHours": 5.1 },
+    { "state": "Tamil Nadu", "kwhPerKwPerDay": 4.2, "peakSunHours": 5.0 },
+    { "state": "Haryana", "kwhPerKwPerDay": 4.2, "peakSunHours": 5.0 },
+    { "state": "Punjab", "kwhPerKwPerDay": 4.1, "peakSunHours": 4.9 },
+    { "state": "Delhi", "kwhPerKwPerDay": 4.1, "peakSunHours": 4.9 },
+    { "state": "Chandigarh", "kwhPerKwPerDay": 4.1, "peakSunHours": 4.9 },
+    { "state": "Chhattisgarh", "kwhPerKwPerDay": 4.2, "peakSunHours": 5.0 },
+    { "state": "Odisha", "kwhPerKwPerDay": 4.0, "peakSunHours": 4.8 },
+    { "state": "Uttar Pradesh", "kwhPerKwPerDay": 4.0, "peakSunHours": 4.8 },
+    { "state": "Jharkhand", "kwhPerKwPerDay": 4.0, "peakSunHours": 4.8 },
+    { "state": "Bihar", "kwhPerKwPerDay": 3.9, "peakSunHours": 4.7 },
+    { "state": "Uttarakhand", "kwhPerKwPerDay": 4.0, "peakSunHours": 4.8 },
+    { "state": "Himachal Pradesh", "kwhPerKwPerDay": 4.0, "peakSunHours": 4.8 },
+    { "state": "Jammu & Kashmir", "kwhPerKwPerDay": 3.9, "peakSunHours": 4.7 },
+    { "state": "Goa", "kwhPerKwPerDay": 4.1, "peakSunHours": 4.9 },
+    { "state": "Puducherry", "kwhPerKwPerDay": 4.2, "peakSunHours": 5.0 },
+    { "state": "Kerala", "kwhPerKwPerDay": 3.8, "peakSunHours": 4.6 },
+    { "state": "West Bengal", "kwhPerKwPerDay": 3.6, "peakSunHours": 4.4 },
+    { "state": "Assam", "kwhPerKwPerDay": 3.4, "peakSunHours": 4.2 },
+    { "state": "Meghalaya", "kwhPerKwPerDay": 3.4, "peakSunHours": 4.2 },
+    { "state": "Tripura", "kwhPerKwPerDay": 3.5, "peakSunHours": 4.3 },
+    { "state": "Manipur", "kwhPerKwPerDay": 3.5, "peakSunHours": 4.3 },
+    { "state": "Nagaland", "kwhPerKwPerDay": 3.5, "peakSunHours": 4.3 },
+    { "state": "Mizoram", "kwhPerKwPerDay": 3.5, "peakSunHours": 4.3 },
+    { "state": "Arunachal Pradesh", "kwhPerKwPerDay": 3.3, "peakSunHours": 4.1 },
+    { "state": "Sikkim", "kwhPerKwPerDay": 3.4, "peakSunHours": 4.2 }
+  ],
+  "systemTypes": [
+    { "id": "ongrid", "name": "On-grid (grid-tied)", "pros": ["Lowest cost per kW", "Eligible for PM Surya Ghar subsidy", "Export surplus through net metering"], "cons": ["Shuts down during a power cut", "No backup"], "bestFor": "Cities and towns with reliable supply — the default choice for ~85% of homes." },
+    { "id": "hybrid", "name": "Hybrid (solar + battery)", "pros": ["Runs through power cuts", "Can still export surplus", "Subsidy applies to the solar portion"], "cons": ["Battery adds roughly ₹35,000–60,000 per usable kWh installed", "Battery replacement every 8–12 years"], "bestFor": "Areas with frequent or long outages, or homes replacing a diesel/inverter setup." },
+    { "id": "offgrid", "name": "Off-grid", "pros": ["Works with no grid connection at all"], "cons": ["Not eligible for the central subsidy", "Highest cost per usable unit", "Oversizing required for cloudy spells"], "bestFor": "Farmhouses, remote sites and properties with no reliable connection." }
+  ]
+}
