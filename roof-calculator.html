@@ -1,0 +1,99 @@
+---
+{"layout": "default", "slug": "roof-calculator.html", "calc": "roof", "title": "Roof Area to Solar kW Calculator — How Much Solar Actually Fits | GridPe", "desc": "Measure your terrace, subtract shading and walkways, and see the largest rooftop solar system that genuinely fits, how many panels it takes and what it would generate.", "schema": [{"@type": "WebApplication", "name": "Roof Area to Solar Capacity Calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}}]}
+---
+<section class="section-sm">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ page.p }}index.html">Home</a> &rsaquo; Calculators &rsaquo; Roof Area to kW</div>
+    <h1>Roof Area to Solar Capacity</h1>
+    <p class="lede" style="max-width:72ch">Total roof area is not usable roof area. Water tanks, staircase headroom, walkways, parapet shadows and the neighbour's building all take a bite. This calculator works from what is genuinely left.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="calc" id="calc-roof">
+      <div class="calc-in">
+        <h3 style="margin-bottom:1em">Your roof</h3>
+        <div class="grid g2">
+          <div class="field">
+            <label for="f-len">Length <span class="lbl-hint">feet</span></label>
+            <input class="input" type="number" id="f-len" value="30" min="5" max="500" step="1">
+          </div>
+          <div class="field">
+            <label for="f-wid">Width <span class="lbl-hint">feet</span></label>
+            <input class="input" type="number" id="f-wid" value="30" min="5" max="500" step="1">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-usable">Usable share after tanks, stairs and walkways <span class="lbl-hint">%</span></label>
+          <input class="input" type="number" id="f-usable" value="70" min="10" max="100" step="5">
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0">70% is typical for an Indian terrace. If your roof is clear and flat with a single tank in a corner, 80&ndash;85% is realistic. A cluttered roof with a stair headroom in the middle can drop to 50%.</p>
+        </div>
+        <div class="field">
+          <label for="f-shade">Area lost to shading <span class="lbl-hint">%</span></label>
+          <input class="input" type="number" id="f-shade" value="10" min="0" max="80" step="5">
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0">Judge this between 10am and 3pm, not at breakfast. Anything shaded during those hours is effectively dead area.</p>
+        </div>
+        <div class="meter"><i id="r-meter" style="width:63%"></i></div>
+        <p class="dim" style="font-size:.78rem">Share of your roof that can actually carry panels.</p>
+
+        <div class="callout tip">
+          <b>Elevated structures change the sum</b>
+          <p class="mb0" style="font-size:.9rem">Panels mounted on a raised structure let you keep using the terrace underneath and can recover some area lost to low obstructions. It adds roughly ₹4,000–8,000 per kW and needs a structural check, but on a small roof with an active terrace it is often the right call.</p>
+        </div>
+      </div>
+
+      <div class="calc-out">
+        <div class="result-hero">
+          <div class="rh-label">Largest system that fits</div>
+          <div class="rh-value" id="r-kw">0 kW</div>
+          <div class="rh-note" id="r-panels">0 panels</div>
+        </div>
+        <div class="kv"><span class="k">Total roof area</span><span class="v" id="r-area">0 sq ft</span></div>
+        <div class="kv"><span class="k">Usable after deductions</span><span class="v" id="r-usable">0 sq ft</span></div>
+        <div class="kv"><span class="k">Estimated generation</span><span class="v pos" id="r-gen">0 units/month</span></div>
+        <div class="kv"><span class="k">Value of that generation</span><span class="v" id="r-value">&#8377;0/year</span></div>
+        <div class="kv"><span class="k">Subsidy at this size</span><span class="v pos" id="r-sub">&#8377;0</span></div>
+
+        <div class="callout mt3">
+          <b>Rule of thumb</b>
+          <p class="mb0" style="font-size:.9rem">1 kW needs roughly 90 sq ft of clear, unshaded area with standard row spacing. A 550 Wp panel occupies about 27 sq ft. Allow walkway gaps between rows — panels packed edge to edge shade each other in winter, when the sun sits lower.</p>
+        </div>
+        <a class="btn btn-primary btn-block mt2" href="{{ page.p }}solar-calculator.html">Now check the financial return &rarr;</a>
+      </div>
+    </div>
+    {% include ad-leader.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap sidebar-layout">
+    <div class="prose">
+      <h2>How to measure a terrace properly</h2>
+      <p>Pace it out or use a tape, and sketch it — do not rely on the builder's plan, which describes the plot, not the usable roof. Then subtract, in this order:</p>
+      <ol>
+        <li><strong>Fixed obstructions.</strong> Overhead water tanks, the stair headroom box, lift machine room, dish antennas, existing solar water heaters. Measure their footprint plus about two feet of working clearance.</li>
+        <li><strong>Access walkways.</strong> You need to reach the panels to clean them, and a technician needs to reach the inverter. Allow a metre-wide path.</li>
+        <li><strong>Parapet shadow.</strong> A four-foot parapet casts a real shadow across the north edge in winter. Panels in that band underperform all season.</li>
+        <li><strong>External shading.</strong> Trees, a taller building to the south, a water tank on an adjacent roof. Assess between 10am and 3pm — outside those hours the sun is too low to matter much for output.</li>
+      </ol>
+
+      <div class="callout warn">
+        <b>Partial shading is worse than it looks</b>
+        <p class="mb0">Panels in a string behave somewhat like a series circuit: one heavily shaded module can drag down the output of the entire string, not just its own share. Bypass diodes limit the damage and module-level power electronics limit it further, but the principle holds — a single badly placed shadow can cost far more than the panel area it covers. If shading is unavoidable, ask the installer about micro-inverters or optimisers and price the difference.</p>
+      </div>
+
+      <h2>Do not fill the roof just because you can</h2>
+      <p>Two constraints cap the useful size regardless of available area. First, the subsidy stops at 3 kW — everything above that is funded entirely by you. Second, and more important, most state net-metering regulations cap sanctioned rooftop capacity in relation to your sanctioned load, and export is credited below retail rate. A system materially larger than your own consumption exports a lot of units at a discounted rate, which stretches payback considerably.</p>
+      <p>The sweet spot for most Indian homes is a system that generates roughly what you consume, sized from your bill rather than your roof. Use the <a href="{{ page.p }}solar-calculator.html">solar calculator</a> for that number; use this page only to check it actually fits.</p>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="{{ page.p }}solar-calculator.html">Solar savings calculator</a></li>
+        <li><a href="{{ page.p }}guides/net-metering-india.html">Net metering explained</a></li>
+        <li><a href="{{ page.p }}guides/rooftop-solar-cost-india.html">What rooftop solar really costs</a></li>
+      </ul>
+    </div>
+    <aside class="sticky-side">{% include ad-rect.html %}</aside>
+  </div>
+</section>
