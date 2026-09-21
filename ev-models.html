@@ -1,0 +1,74 @@
+---
+{"layout": "default", "slug": "ev-models.html", "title": "India EV Database 2026 — Real Range, Efficiency & Cost Per Km | GridPe", "desc": "Every mainstream electric car in India with battery size, claimed range, independently tested km/kWh, charging speeds and real running cost per kilometre at home and on public fast charging.", "pagejs": "page-ev-models.js"}
+---
+<section class="section-sm">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ page.p }}index.html">Home</a> &rsaquo; Data &rsaquo; EV Database</div>
+    <h1>India EV Database</h1>
+    <p class="lede" style="max-width:76ch">Battery size, claimed range, <strong>independently tested efficiency</strong> and real running cost per kilometre for <span id="count">20</span> electric cars on sale in India. The "real range" column is usable battery × tested km/kWh — which is consistently well below the certified figure. Data as of <strong id="asof">September 2026</strong>.</p>
+    <div class="filter-bar mt2">
+      <input class="input" id="q" placeholder="Search a model — &quot;Nexon&quot;, &quot;Windsor&quot;…" aria-label="Search EV models">
+      <select class="select" id="seg" aria-label="Filter by segment">
+        <option value="">All segments</option><option>Micro</option><option>Hatchback</option>
+        <option>Sedan</option><option>Compact SUV</option><option>SUV</option><option>MPV</option>
+      </select>
+      <div class="input-group" style="flex:0 1 190px">
+        <span class="prefix">&#8377;/unit</span>
+        <input class="input" type="number" id="r" value="8" min="1" max="30" step="0.5" aria-label="Home tariff">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-sort="brand" style="cursor:pointer">Model &#8645;</th>
+            <th class="num" data-sort="batteryKwh" style="cursor:pointer">kWh &#8645;</th>
+            <th class="num" data-sort="claimedRangeKm" style="cursor:pointer">Claimed km &#8645;</th>
+            <th class="num">Real km</th>
+            <th class="num" data-sort="realKmPerKwh" style="cursor:pointer">km/kWh &#8645;</th>
+            <th class="num">AC / DC kW</th>
+            <th class="num">Home &#8377;/km</th>
+            <th class="num">Public &#8377;/km</th>
+          </tr>
+        </thead>
+        <tbody id="rows"><tr><td colspan="8" class="empty">Loading…</td></tr></tbody>
+      </table>
+    </div>
+    <p class="dim mt1" style="font-size:.8rem">Home column uses your chosen tariff at 88% AC charging efficiency. Public column assumes ₹21/unit DC at 94% efficiency. Click a column heading to sort.</p>
+    {% include ad-leader.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap sidebar-layout">
+    <div class="prose">
+      <h2>Why "real range" is lower than the sticker</h2>
+      <p>Indian EVs are certified on the MIDC cycle, a laboratory procedure that runs at modest speeds, mild temperatures, no air conditioning, no passengers and no gradient. Real driving has all of those. The gap between certified and observed range across mainstream Indian EVs runs roughly 20&ndash;35%, and it widens on the highway, where aerodynamic drag rises with the square of speed — an EV at 110 km/h can consume 40% more per kilometre than the same car at 70.</p>
+      <p>The column that matters for cost is <strong>km/kWh</strong>. It is the EV equivalent of kilometres per litre, it is not affected by battery size, and it is the number you multiply against your tariff. An MG Comet at 11.17 km/kWh is more than twice as efficient as a Harrier EV AWD at 5.35 — which means that on identical electricity, one costs half as much per kilometre to run as the other.</p>
+
+      <h2>Reading the charging columns</h2>
+      <p>AC figures are what the car's onboard charger accepts from a wallbox — typically 3.3, 7.2 or 11 kW. Nothing you plug into will exceed that number. DC is the peak the car accepts from a fast charger, though it only holds that peak briefly before the taper begins. A model showing "—" in the DC column has no fast-charging inlet and can only be charged on AC, which rules it out as a highway car.</p>
+
+      <div class="callout tip">
+        <b>How to use this table before a test drive</b>
+        <p class="mb0">Find your daily commute in kilometres, divide by the km/kWh figure, and multiply by your tariff. That is your actual daily cost. Then check the real-range column against your longest regular journey — if it is under roughly 1.4× that trip, you will be planning charging stops, which is a lifestyle change rather than a specification.</p>
+      </div>
+
+      <h2>What the table deliberately excludes</h2>
+      <p>Purchase price beyond an indicative ex-showroom figure, insurance, depreciation and servicing. These matter to total cost of ownership and they move faster than we could keep current. EVs are cheaper to service and more expensive to insure; resale values in India remain the largest unknown in any EV ownership calculation, and anyone quoting a confident five-year residual is guessing.</p>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="{{ page.p }}ev-calculator.html">EV vs petrol cost calculator</a></li>
+        <li><a href="{{ page.p }}charging-calculator.html">Charging cost and time calculator</a></li>
+        <li><a href="{{ page.p }}guides/ev-vs-petrol-cost-india.html">Full guide: EV vs petrol in India</a></li>
+      </ul>
+    </div>
+    <aside class="sticky-side">{% include ad-rect.html %}</aside>
+  </div>
+</section>
