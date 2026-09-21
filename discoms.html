@@ -1,0 +1,51 @@
+---
+{"layout": "default", "slug": "discoms.html", "title": "India DISCOM Directory — Every Electricity Distribution Company | GridPe", "desc": "Complete directory of India's electricity distribution companies by state, with official websites and complaint helplines. BSES, MSEDCL, BESCOM, TANGEDCO, UPPCL, CESC and 60 more.", "pagejs": "page-discoms.js"}
+---
+<section class="section-sm">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ page.p }}index.html">Home</a> &rsaquo; Data &rsaquo; DISCOM Directory</div>
+    <h1>India DISCOM Directory</h1>
+    <p class="lede" style="max-width:74ch">Every electricity distribution company in India, with its official website and complaint number. Showing <strong id="count">60</strong> entries.</p>
+    <div class="filter-bar mt2">
+      <input class="input" id="q" placeholder="Search &quot;BSES&quot;, &quot;Mahavitaran&quot;, &quot;Kerala&quot;…" aria-label="Search DISCOMs">
+      <select class="select" id="st" aria-label="Filter by state"><option value="">All states</option></select>
+    </div>
+    <div class="callout danger mt2">
+      <b>GridPe will never ask for your consumer number, bill payment or bank details</b>
+      <p class="mb0">Electricity bill scams are common in India — a message threatening disconnection tonight unless you call a number and install an app. Your DISCOM does not disconnect over WhatsApp, and it does not ask you to install remote-access software. Pay only through the official sites linked here or your DISCOM's own app. The national complaint short code is <strong>1912</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div id="dlist"><div class="empty">Loading directory…</div></div>
+    {% include ad-leader.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap wrap-narrow prose">
+    <h2>Who does what in India's power sector</h2>
+    <p>Three layers sit between a power plant and your meter, and knowing which one you are dealing with saves a great deal of time when something goes wrong.</p>
+    <ul>
+      <li><strong>Generation companies</strong> (NTPC, state GENCOs, independent producers) make the electricity.</li>
+      <li><strong>Transmission companies</strong> (POWERGRID, state TRANSCOs) move it at high voltage across regions.</li>
+      <li><strong>Distribution companies — DISCOMs</strong> — take it the last mile, own your meter, issue your bill and handle your connection. This is who you actually deal with.</li>
+    </ul>
+    <p>Above them sit the regulators: the Central Electricity Regulatory Commission for interstate matters and a State Electricity Regulatory Commission in each state, which approves the tariff order that decides what you pay. Grid-India (formerly POSOCO) operates the national grid and publishes the daily demand and frequency data.</p>
+
+    <h2>What your DISCOM is responsible for</h2>
+    <ul>
+      <li>New connections, load enhancement and load reduction</li>
+      <li>Meter installation, testing and replacement</li>
+      <li>Billing, and correcting a bill that is wrong</li>
+      <li>Outage restoration in your area</li>
+      <li>Net-metering approval and commissioning for rooftop solar — the step that most often delays a solar installation</li>
+    </ul>
+
+    <h2>Escalating a complaint</h2>
+    <p>The sequence is: the DISCOM's own helpline or app, then the Consumer Grievance Redressal Forum, then the Electricity Ombudsman for your state. Each stage has a statutory response window, and the Ombudsman's decision binds the DISCOM. Keep the complaint number from the first call — the entire escalation path depends on it. For a disputed bill, ask specifically for a meter test report in writing rather than a verbal assurance.</p>
+    <p>Note that DISCOM names change: several state boards have been unbundled or renamed in recent years, and Telangana's TSSPDCL and TSNPDCL became TGSPDCL and TGNPDCL. If a search returns nothing, try the older name.</p>
+  </div>
+</section>

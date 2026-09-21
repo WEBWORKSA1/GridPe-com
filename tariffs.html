@@ -1,0 +1,37 @@
+---
+{"layout": "default", "slug": "tariffs.html", "title": "Electricity Tariff Rates India 2026 — State-Wise Domestic Slabs | GridPe", "desc": "Domestic electricity tariff slabs for every major Indian state and DISCOM: per-unit rates, fixed charges, fuel surcharge and electricity duty, compiled from published SERC tariff orders.", "pagejs": "page-tariffs.js"}
+---
+<section class="section-sm">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ page.p }}index.html">Home</a> &rsaquo; Data &rsaquo; Tariffs</div>
+    <h1>State-Wise Electricity Tariffs</h1>
+    <p class="lede" style="max-width:74ch">Domestic (LT-1 residential) slab rates, fixed charges, fuel surcharge and electricity duty for <strong id="count">60</strong> distribution companies, compiled from published State Electricity Regulatory Commission tariff orders. Data as of <strong id="asof">September 2026</strong>.</p>
+    <div class="filter-bar mt2">
+      <input class="input" id="q" placeholder="Search a state or DISCOM — try &quot;Maharashtra&quot; or &quot;BESCOM&quot;" aria-label="Search tariffs">
+      <a class="btn btn-primary" href="{{ page.p }}bill-calculator.html">Open the bill calculator</a>
+    </div>
+    <div class="callout warn mt2">
+      <b>Read this before quoting a number from here</b>
+      <p class="mb0">Tariffs are revised by state commissions around the start of each financial year, and fuel surcharge components move more often than that. These figures are a well-grounded reference, not a substitute for your own bill or your DISCOM's current order. Categories also matter — three-phase, mixed-use and commercial connections are billed under different schedules entirely.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <div id="tlist"><div class="empty">Loading tariff data…</div></div>
+    {% include ad-leader.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap wrap-narrow prose">
+    <h2>How to read these tables</h2>
+    <p><strong>Telescopic</strong> means each slab rate applies only to the units inside that slab — consuming 250 units bills the first 100 at the lowest rate and the next 150 higher. <strong>Flat</strong> means the slab your total lands in sets one rate for everything you consumed; crossing a boundary can raise the rate on your entire consumption at once.</p>
+    <p><strong>Fixed charge</strong> is levied per kilowatt of sanctioned load per month in most states, and as a flat monthly minimum in others. You pay it whether or not you consume anything.</p>
+    <p><strong>Fuel and power purchase cost adjustment</strong> (FPPCA, FAC or PPAC depending on the state) is a pass-through of the DISCOM's actual power procurement cost, charged as a percentage of the energy charge. It is the most volatile line on any Indian electricity bill.</p>
+    <p><strong>Electricity duty</strong> is a state tax on the energy and fixed charges combined. It ranges from nil to 16%.</p>
+    <h2>Free-unit schemes</h2>
+    <p>Several states now waive part of the bill for eligible domestic consumers — Delhi up to 200 units, Karnataka's Gruha Jyoti, Telangana's Gruha Jyothi, Punjab's 300 units, Tamil Nadu's first 100 units per two-month cycle, Jharkhand's 200 units. These are applied after the tariff calculation and almost always require opting in through the DISCOM. They are also policy, not physics: they can be revised or withdrawn, which is worth remembering when you are evaluating a 25-year solar investment against a currently-zero bill.</p>
+  </div>
+</section>
