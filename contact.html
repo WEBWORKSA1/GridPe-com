@@ -1,0 +1,69 @@
+---
+{"layout": "default", "slug": "contact.html", "title": "Contact GridPe — Corrections, Partnerships & Enquiries", "desc": "Get in touch with GridPe: send a data correction, ask about advertising or partnerships, report an issue with a calculator, or enquire about acquiring the GridPe.com domain.", "schema": [{"@type": "ContactPage", "name": "Contact GridPe"}]}
+---
+<section class="section-sm">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ page.p }}index.html">Home</a> &rsaquo; Contact</div>
+    <h1>Contact us</h1>
+    <p class="lede" style="max-width:70ch">One desk handles everything. Corrections get read first — a wrong tariff on this site can cost a reader real money, so we treat those as urgent.</p>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap sidebar-layout">
+    <div>
+      <form class="js-form card card-pad-lg" data-kind="General Enquiry"
+            data-success-title="Message sent"
+            data-success-msg="We read everything and reply to most messages within one working day. Corrections with a primary source attached get looked at the same day.">
+        <div class="grid g2">
+          <div class="field"><label for="m-name">Your name</label><input class="input" id="m-name" name="name" required></div>
+          <div class="field"><label for="m-email">Email</label><input class="input" type="email" id="m-email" name="email" required></div>
+        </div>
+        <div class="field">
+          <label for="m-topic">What is this about?</label>
+          <select class="select" id="m-topic" name="topic" required>
+            <option value="">Select…</option>
+            <option>Data correction — something on the site is wrong</option>
+            <option>A calculator is not working properly</option>
+            <option>Rooftop solar question</option>
+            <option>EV or charging question</option>
+            <option>Advertising or sponsorship</option>
+            <option>Installer partnership</option>
+            <option>Press or media</option>
+            <option>Careers</option>
+            <option>Acquiring this domain / website</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="m-msg">Message</label>
+          <textarea class="textarea" id="m-msg" name="message" placeholder="If you are reporting a data error, please include the page and a link to the primary source — a tariff order, portal page or test report. That gets it fixed in hours rather than weeks." required></textarea>
+        </div>
+        <div class="field"><label class="check"><input type="checkbox" name="consent" value="yes" required><span>I accept the <a href="{{ page.p }}privacy.html">privacy policy</a> and consent to being contacted about this message.</span></label></div>
+        <button class="btn btn-primary btn-lg" type="submit">Send message</button>
+        <p class="dim mt1" style="font-size:.8rem">Prefer your own mail client? <a href="#" data-mail data-subject="GridPe enquiry">Open a pre-filled email instead</a>.</p>
+      </form>
+
+      <div class="grid g3 mt3">
+        <div class="card"><h4>Corrections</h4><p class="muted" style="font-size:.9rem;margin:0">Include the page, the figure you believe is wrong and a primary source. We also pay a bounty for accepted corrections — see <a href="{{ page.p }}contests.html">contests</a>.</p></div>
+        <div class="card"><h4>Press</h4><p class="muted" style="font-size:.9rem;margin:0">Our datasets may be cited with attribution and a link. Ask and we will send the underlying JSON.</p></div>
+        <div class="card"><h4>This domain</h4><p class="muted" style="font-size:.9rem;margin:0">GridPe.com and the full site may be available. Enquiries go through <a href="https://web.works/contact" target="_blank" rel="noopener">web.works/contact</a>.</p></div>
+      </div>
+    </div>
+
+    <aside class="sticky-side">
+      <div class="card" style="border-color:var(--brand)">
+        <h4>Response times</h4>
+        <div class="kv"><span class="k">Data corrections</span><span class="v">Same day</span></div>
+        <div class="kv"><span class="k">General enquiries</span><span class="v">1 working day</span></div>
+        <div class="kv"><span class="k">Advertising</span><span class="v">1 working day</span></div>
+        <div class="kv"><span class="k">Job applications</span><span class="v">7 days</span></div>
+      </div>
+      <div class="card mt2">
+        <h4>What we cannot help with</h4>
+        <p class="muted" style="font-size:.9rem">We are not your DISCOM and have no access to your account. For a billing dispute, a disconnection, an outage or a meter problem, contact your distribution company directly — the <a href="{{ page.p }}discoms.html">directory</a> has every official number. The national complaint short code is 1912.</p>
+      </div>
+      {% include ad-rect.html %}
+    </aside>
+  </div>
+</section>
