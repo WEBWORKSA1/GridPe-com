@@ -1,0 +1,144 @@
+---
+{"layout": "default", "slug": "ev-calculator.html", "calc": "ev", "title": "EV vs Petrol Cost Calculator India 2026 — Real Cost Per Km | GridPe", "desc": "Compare the true running cost of an electric car against petrol in India. Uses independently tested km/kWh rather than ARAI range, with home and public charging mix, annual savings and payback on the price premium.", "schema": [{"@type": "WebApplication", "name": "EV vs Petrol Cost Calculator India", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}}]}
+---
+<section class="section-sm">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ page.p }}index.html">Home</a> &rsaquo; Calculators &rsaquo; EV vs Petrol</div>
+    <h1>EV vs Petrol Cost Calculator</h1>
+    <p class="lede" style="max-width:72ch">Built on tested real-world efficiency, not certified range. Certified figures overstate what you will actually get by 20–35%, which is exactly the margin that decides whether an EV pays for itself.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="calc" id="calc-ev">
+      <div class="calc-in">
+        <h3 style="margin-bottom:1em">Your comparison</h3>
+        <div class="field">
+          <label for="f-model">Electric car</label>
+          <select class="select" id="f-model"></select>
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0">Efficiency: <strong id="r-eff">—</strong> &middot; Battery: <span id="r-batt">—</span></p>
+        </div>
+        <div class="field">
+          <label for="f-city">City <span class="lbl-hint">sets the petrol price</span></label>
+          <select class="select" id="f-city"></select>
+        </div>
+        <div class="field">
+          <label for="f-kmpl">Petrol car you are comparing against <span class="lbl-hint">km/litre</span></label>
+          <input class="input" type="number" id="f-kmpl" value="15" min="4" max="35" step="0.5">
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0">Real-world city figures: hatchback 14&ndash;17, compact SUV 12&ndash;15, large SUV 9&ndash;12.</p>
+        </div>
+        <div class="field">
+          <label for="f-km">Annual running &mdash; <span id="f-km-v">15,000 km/year</span></label>
+          <input type="range" id="f-km" min="3000" max="50000" step="1000" value="15000">
+          <div class="range-row"><span>3,000</span><span>50,000</span></div>
+        </div>
+        <hr>
+        <h4>Charging</h4>
+        <div class="field">
+          <label for="f-mix">Share charged at home &mdash; <span id="f-mix-v"></span></label>
+          <input type="range" id="f-mix" min="0" max="100" step="5" value="80">
+          <div class="range-row"><span>All public</span><span>All home</span></div>
+          <p class="dim" style="font-size:.8rem;margin:6px 0 0">If you cannot charge at home, drag this to zero. It is the assumption that most changes the answer.</p>
+        </div>
+        <div class="field">
+          <label for="f-home">Home tariff per unit</label>
+          <div class="input-group"><span class="prefix">&#8377;</span><input class="input" type="number" id="f-home" value="8" min="1" max="25" step="0.25"></div>
+        </div>
+        <div class="field">
+          <label for="f-public">Public DC fast charging per unit</label>
+          <div class="input-group"><span class="prefix">&#8377;</span><input class="input" type="number" id="f-public" value="21" min="5" max="40" step="0.5"></div>
+        </div>
+        <div class="field">
+          <label for="f-delta">Price premium over the petrol equivalent</label>
+          <div class="input-group"><span class="prefix">&#8377;</span><input class="input" type="number" id="f-delta" value="300000" min="0" step="10000"></div>
+        </div>
+      </div>
+
+      <div class="calc-out">
+        <div class="result-hero">
+          <div class="rh-label">Annual saving on fuel</div>
+          <div class="rh-value" id="r-save">&#8377;0</div>
+          <div class="rh-note" id="r-cut">0% cheaper per km</div>
+        </div>
+        <div class="meter"><i id="r-meter" style="width:0%"></i></div>
+
+        <div class="stat-row">
+          <div class="stat"><b id="r-ice-km">&#8377;0</b><span>Petrol / km</span></div>
+          <div class="stat"><b id="r-ev-blend">&#8377;0</b><span>Your EV / km</span></div>
+          <div class="stat"><b id="r-payback">0 yrs</b><span>Premium payback</span></div>
+        </div>
+
+        <div class="kv"><span class="k">EV on home charging</span><span class="v pos" id="r-ev-home-km">&#8377;0/km</span></div>
+        <div class="kv"><span class="k">EV on public DC fast charging</span><span class="v" id="r-ev-pub-km">&#8377;0/km</span></div>
+        <div class="kv"><span class="k">Petrol cost per year</span><span class="v neg" id="r-ice-year">&#8377;0</span></div>
+        <div class="kv"><span class="k">EV cost per year</span><span class="v pos" id="r-ev-year">&#8377;0</span></div>
+        <div class="kv"><span class="k">Saving over 5 years</span><span class="v" id="r-5yr">&#8377;0</span></div>
+        <div class="kv"><span class="k">Saving over 10 years</span><span class="v" id="r-10yr">&#8377;0</span></div>
+        <div class="kv"><span class="k">Full charge at home</span><span class="v" id="r-full">&#8377;0</span></div>
+        <div class="kv"><span class="k">Range</span><span class="v" id="r-range">—</span></div>
+        <div class="kv"><span class="k">Petrol price used</span><span class="v" id="r-petrol-city">—</span></div>
+
+        <h4 style="margin:22px 0 4px">Annual fuel cost compared</h4>
+        <div class="bars" id="r-bars"></div>
+        <div class="bar-labels"><span>Petrol</span><span>All public</span><span>Your mix</span><span>All home</span></div>
+
+        <div class="callout tip mt3">
+          <b>What this excludes</b>
+          <p class="mb0" style="font-size:.9rem">Fuel only. EVs also cut servicing costs materially (no oil, filters, clutch or exhaust) but carry higher insurance premiums and a steeper depreciation curve in the Indian resale market. Battery replacement outside warranty is the tail risk — priced at roughly ₹5,000–8,000 per kWh today and falling.</p>
+        </div>
+      </div>
+    </div>
+    {% include ad-leader.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap sidebar-layout">
+    <div class="prose">
+      <h2>The formula, spelled out</h2>
+      <p>Cost per kilometre for a petrol car is trivial: fuel price divided by real mileage. For an EV there is a step people miss — charging losses. Pushing 10 units into the wall socket does not put 10 units into the battery.</p>
+      <blockquote>
+        <p><strong>Petrol ₹/km</strong> = petrol price ÷ km per litre</p>
+        <p class="mb0"><strong>EV ₹/km</strong> = tariff per unit ÷ (real km per kWh × charging efficiency)</p>
+      </blockquote>
+      <p>We use 88% efficiency for AC home charging and 94% for DC fast charging — DC bypasses the onboard charger and loses less. Ignoring this understates EV running cost by roughly 12%, which is how a lot of published comparisons end up flattering.</p>
+
+      <h3>Worked example</h3>
+      <p>A Tata Nexon EV 45 tested at 7.79 km/kWh, charged at home on an ₹8/unit tariff:</p>
+      <p><code>8 ÷ (7.79 × 0.88) = ₹1.17 per km</code></p>
+      <p>On public DC at ₹21/unit: <code>21 ÷ (7.79 × 0.94) = ₹2.87 per km</code></p>
+      <p>Against a 15 km/l petrol hatchback in Delhi at ₹102.12/litre: <code>102.12 ÷ 15 = ₹6.81 per km</code></p>
+      <p>At 15,000 km a year, home charging saves about ₹84,600 annually. Running entirely on public fast charging, the saving falls to roughly ₹59,000 — still substantial, but it pushes the payback on a ₹3 lakh premium from three and a half years to over five.</p>
+
+      <h2>The four things that change the answer</h2>
+      <ol>
+        <li><strong>Whether you can charge at home.</strong> This is the single biggest variable and it is binary. A dedicated parking spot with a socket you control is worth more to EV economics than any specification on the brochure. Apartment dwellers without a committed bay should model this at 0% home charging and see whether the numbers still work.</li>
+        <li><strong>Annual mileage.</strong> Below about 8,000 km a year, the fuel saving is too small to repay a price premium inside the ownership period. EVs reward high-mileage drivers; they punish weekend cars.</li>
+        <li><strong>Your electricity tariff.</strong> If you are in a high slab at ₹11/unit, home charging costs half again as much as it does at ₹7. Several states offer a separate, cheaper EV tariff on a dedicated meter — worth applying for if you are charging daily.</li>
+        <li><strong>What you are actually replacing.</strong> Comparing an EV to a 9 km/l diesel SUV yields a spectacular saving. Comparing it to a CNG hatchback at ₹2.60/km yields almost none. Be honest about the alternative.</li>
+      </ol>
+
+      <div class="callout warn">
+        <b>The claim to distrust</b>
+        <p class="mb0">"₹1 per kilometre" is the standard EV marketing line. It holds only on home charging, on the most efficient models, at a low tariff, with charging losses ignored. It is roughly true for an MG Comet at 11.17 km/kWh on a ₹8 tariff. It is not true for a 79 kWh SUV at 5.68 km/kWh, which lands closer to ₹1.60 on the same tariff — and near ₹4 on public fast charging.</p>
+      </div>
+
+      <h2>Related</h2>
+      <ul>
+        <li><a href="{{ page.p }}charging-calculator.html">Charging cost and time calculator</a></li>
+        <li><a href="{{ page.p }}ev-models.html">EV model database — real efficiency for 20 cars</a></li>
+        <li><a href="{{ page.p }}guides/ev-vs-petrol-cost-india.html">Full guide: EV vs petrol in India</a></li>
+        <li><a href="{{ page.p }}guides/home-ev-charger-installation.html">Installing a home charger: cost, wiring, load</a></li>
+      </ul>
+    </div>
+    <aside class="sticky-side">
+      {% include ad-rect.html %}
+      <div class="card" style="border-color:var(--brand)">
+        <h4>Charge it on your own solar</h4>
+        <p class="muted" style="font-size:.9rem">A 3 kW rooftop system generates roughly 12 units a day &mdash; enough for about 90 km of EV running, at a marginal cost of nothing.</p>
+        <a class="btn btn-primary btn-sm btn-block" href="{{ page.p }}solar-calculator.html">Run the solar numbers</a>
+      </div>
+    </aside>
+  </div>
+</section>
